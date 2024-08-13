@@ -1,2 +1,33 @@
 @import "variables";
 
+.blog-container{
+
+  .title{
+    text-transform: uppercase;
+    font-weight: 750;
+    text-align: center;
+    margin: 20px auto 60px auto;
+    line-height: 210px;
+    font-size: 275px;
+    padding: 40px 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: #ffffff;
+  }
+}
+
+@media (max-width: 1680px) {
+  .blog-container {
+    .title {
+      font-size: 210px;
+    }
+  }
+}
+
+@media (max-width: $bigTableWidth) {
+  .blog-container {
+    .title {
+      font-size: 170px;
+    }
+  }
+}

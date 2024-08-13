@@ -1,15 +1,19 @@
 @import "variables";
 
+.container{
+  margin: auto;
+}
+
 header {
-  padding: 20px 40px 40px 40px;
-  background-color: $blackBackground;
   .logo {
     width: 40px;
     margin-right: $mediumMargin;
   }
 
   .header-menu_links{
-    padding: 30px 18px;
+    align-items: center;
+    display: flex;
+    padding: 30px 0;
     a {
       margin-right: $mediumMargin;
       padding-top: 9px;
@@ -19,6 +23,13 @@ header {
       font-weight: 500;
       letter-spacing: 1px;
       text-transform: uppercase;
+      text-decoration: none;
+      color: $whiteTextColor;
+
+      &:hover {
+        color: #ffffff;
+      }
+
       &.active {
         color: #ffffff;
       }
@@ -26,11 +37,8 @@ header {
   }
 
   .header-social_links{
-    align-items: center;
-    display: flex;
-    margin-left: auto;
-    width: max-content;
-
+    padding: 36px 0px 0px 0px;
+    text-align: right;
     .social-link{
       margin-left: $smallMargin;
       img{

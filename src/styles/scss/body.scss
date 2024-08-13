@@ -5,13 +5,8 @@
   padding: 0;
 }
 
-a {
-  text-decoration: none;
-  color: $whiteTextColor;
-
-  &:hover {
-    color: #ffffff;
-  }
+h1 {
+  margin: 0;
 }
 
 body{
@@ -19,8 +14,105 @@ body{
   background-color: $bodyBackground;
 }
 
+.dark {
+  padding: 20px 40px 40px 40px;
+  background-color: $blackBackground;
+}
+
 @media (min-width: 1680px) {
   .container {
+    box-sizing: border-box;
     max-width: $bigDesktopWidth;
+  }
+}
+
+@media(max-width: 1440px) {
+  .container {
+    padding: 0;
+    max-width: 1280px
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1140px) {
+  .menu-links {
+    display: none;
+  }
+
+  .header-social_links {
+    display: none;
+  }
+
+  .header-social_links.open {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: -50px; /* Адаптуйте це значення відповідно до вашого дизайну */
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  .menu-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: gray;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+  }
+
+  .header-menu_links .menu-links.open {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .burger-icon {
+    margin: auto 0 auto auto;
+    width: max-content;
+    display: block;
+    cursor: pointer;
+  }
+
+  .burger-icon span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+
+  .burger-icon.open span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .burger-icon.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger-icon.open span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
+
+@media (min-width: 1141px) {
+  .burger-icon {
+    display: none;
   }
 }
