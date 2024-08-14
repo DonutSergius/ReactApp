@@ -1,8 +1,9 @@
 import React from "react";
 import SocialLinks from "./Links/SocialLinks";
 import MenuLinks from "./Links/MenuLinks";
-import BurgerIcon from "./BurgerIcon";
+import BurgerIcon from "./BurgerMenu/BurgerIcon";
 import Service from "../services/Service";
+import BurgerMenu from "./BurgerMenu/BurgerMenu";
 
 class Header extends React.Component {
     constructor(props) {
@@ -44,6 +45,7 @@ class Header extends React.Component {
                 <div className="header-social_container col-lg-3 col-md-6 col-6">
                     <SocialLinks isBurgerOpen={isBurgerOpen}/>
                 </div>
+                <BurgerMenu isBurgerOpen={isBurgerOpen}/>
             </header>
         );
     }

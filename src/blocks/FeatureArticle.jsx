@@ -53,6 +53,7 @@ class FeatureArticle extends React.Component {
                         articleDate={importantArticle.articleDate}
                         articleTitle={importantArticle.articleTitle}
                         articleBody={importantArticle.articleBody}
+                        articleImageClass="col-lg-12 col-md-6"
                     />
                 </div>
                 <div className="second_teaser col-lg-6 col-md-12">
