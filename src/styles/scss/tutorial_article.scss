@@ -1,0 +1,52 @@
+@import "variables";
+
+.tutorial-design-container{
+  .tutorial-design-title {
+    text-transform: uppercase;
+    color: #121212;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+    padding: 0 20px;
+    opacity: 0.3;
+  }
+
+  .tutorial-design-slider-container {
+      .slick-list {
+        .slick-slide {
+          border-right: 1px solid #e5e5e5;
+          .article-conatiner {
+            .article{
+              padding: 0 20px;
+              &-image{
+                img {
+                  width: 100%;
+                  height: auto;
+                }
+              }
+
+              &-data {
+                &_date {
+                  font-weight: normal;
+                  font-size: 14px;
+                  line-height: 15px;
+                  color: #000000;
+                  opacity: 0.5;
+                  padding: 16px 0 10px;
+                }
+                &_title {
+                  color: $blackTextColor;
+                  font-size: 25px;
+                  line-height: 35px;
+                  letter-spacing: 0.3px;
+                  font-weight: 600;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

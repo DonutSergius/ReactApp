@@ -53,11 +53,12 @@ header {
 @media (max-width: 1140px) {
 
   .header-burger-menu{
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+
     a {
       display: none;
     }
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
     &.open {
       padding: 60px 0 0 0 ;
       opacity: 1;
@@ -123,10 +124,10 @@ header {
     &.open {
       right: 10px;
       position: absolute;
+      margin: 20px 0 auto auto;
       span {
         background-color: #000;
       }
-      margin: 20px 0 auto auto;
     }
   }
 

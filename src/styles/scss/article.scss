@@ -6,7 +6,7 @@
 
 .feature-articles {
 
-  .feature-article-conatiner {
+  .article-conatiner {
     margin: 0 20px;
   }
 
@@ -47,7 +47,7 @@
 }
 
 .second_teaser {
-  .feature-article-conatiner {
+  .article-conatiner {
     margin-top: 20px;
     padding-bottom: 38px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -74,7 +74,7 @@
 }
 
 @media (max-width: 1679px) {
-  .feature-articles {
+  .articles {
     .article-image{
       img {
         width: 100%;
@@ -98,7 +98,7 @@
   }
 
   .second_teaser {
-    .feature-article-conatiner {
+    .article-conatiner {
       .article-data {
         &_date {
           letter-spacing: 0.5px;
@@ -117,12 +117,12 @@
 
 @media (max-width: 991px) {
   .important_teaser{
-    .feature-article-conatiner{
+    .article-conatiner{
       padding-bottom: 38px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       .article-data{
         max-width: 50%;
       }
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
   }
 }
@@ -130,7 +130,7 @@
 @media (max-width: 767px) {
   .important_teaser{
     margin-bottom: 20px;
-    .feature-article-conatiner{
+    .article-conatiner{
       margin: 0;
       .article-data{
         max-width: 100%;
@@ -138,7 +138,7 @@
     }
   }
 
-  .feature-articles {
+  .articles {
     .article-data{
       &_title {
         font-size: 24px;
@@ -152,7 +152,7 @@
   }
 
   .second_teaser {
-    .feature-article-conatiner {
+    .article-conatiner {
       margin: 20px 0 0 0;
       .article-image{
         order: 2;

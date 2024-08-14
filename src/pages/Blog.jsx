@@ -2,6 +2,7 @@ import React from 'react';
 import Service from "../services/Service";
 import Header from "../components/Header";
 import FeatureArticle from "../blocks/FeatureArticle";
+import TutorialDesign from "../blocks/TutorialDesign";
 
 class Blog extends React.Component{
     constructor(props) {
@@ -24,10 +25,15 @@ class Blog extends React.Component{
     render () {
         const { title } = this.state;
         return (
-            <div className="blog-container dark">
-                <Header />
-                <h1 className="blog-page-title title">{title}</h1>
-                <FeatureArticle />
+            <div className="blog-container">
+                <div className="dark">
+                    <Header />
+                    <h1 className="blog-page-title title">{title}</h1>
+                    <FeatureArticle />
+                </div>
+                <div className="whitearea">
+                    <TutorialDesign />
+                </div>
             </div>
         );
     }

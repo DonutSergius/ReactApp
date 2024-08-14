@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 h1 {
   margin: 0;
 }
@@ -17,6 +21,11 @@ body{
 .dark {
   padding: 20px 40px 40px 40px;
   background-color: $blackBackground;
+}
+
+.whitearea {
+  padding: 60px 40px 40px 40px;
+  background-color: $whiteBackground;
 }
 
 @media (min-width: 1680px) {

@@ -13,9 +13,9 @@ class Article extends React.Component {
             articleDataClass,
         } = this.props;
         return (
-            <div className="feature-article-conatiner">
+            <div className="article-conatiner">
                 <a href={articleLink}>
-                    <div className="feature-article row">
+                    <div className="article row">
                         <div className={`article-image ${articleImageClass}`}>
                             <img src={imageUrl} alt={imageAlt}/>
                         </div>
