@@ -404,3 +404,16 @@ header .header-social_links .social-link img {
   letter-spacing: 0.3px;
   font-weight: 600;
 }
+
+@media (max-width: 1680px) {
+  .tutorial-design-container .tutorial-design-slider-container .slick-list .slick-slide .article-conatiner .article-data_title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .tutorial-design-container .tutorial-design-slider-container .slick-list .slick-slide .article-conatiner .article-data_title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
