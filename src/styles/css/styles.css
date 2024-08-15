@@ -431,6 +431,9 @@
   }
 }
 @media (max-width: 500px) {
+  .static-block-container {
+    max-height: 800px;
+  }
   .static-block-container .static-block-data_title {
     font-weight: 500;
     font-size: 8vw;
@@ -466,6 +469,9 @@
   }
 }
 @media (max-width: 410px) {
+  .static-block-container {
+    max-height: 550px;
+  }
   .static-block-container .static-block-data_title {
     font-weight: 500;
     font-size: 7vw;

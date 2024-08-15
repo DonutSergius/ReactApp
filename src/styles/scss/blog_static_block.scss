@@ -271,6 +271,7 @@
 
 @media (max-width: 500px) {
     .static-block-container {
+        max-height: 800px;
         .static-block-data {    
             &_title{
                 font-weight: 500;
@@ -311,6 +312,7 @@
 
 @media (max-width: 410px) {
     .static-block-container {
+        max-height: 550px;
         .static-block-data {    
             &_title{
                 font-weight: 500;
