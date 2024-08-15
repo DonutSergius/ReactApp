@@ -13,7 +13,7 @@ class StaticBlock extends React.Component {
         } = this.props;
 
         return (
-            <div className="static-block-container row">
+            <div className="static-block-container row dark">
                 <div className="static-block-data col-lg-6 col-md-12">
                     <div className="static-block-data_title">
                         {blockTitle}

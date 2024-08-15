@@ -51,7 +51,7 @@ class Blog extends React.Component{
                 <div className="whitearea">
                     <TutorialDesign />
                 </div>
-                <div className="dark">
+                <>
                     {blogStaticBlock && (
                         <StaticBlock
                             blockTitle={blogStaticBlock.field_title}
@@ -62,7 +62,7 @@ class Blog extends React.Component{
                             blockLinkUrl={blogStaticBlock.field_link && blogStaticBlock.field_link.uri}
                         />
                     )}
-                </div>
+                </>
             </div>
         );
     }
