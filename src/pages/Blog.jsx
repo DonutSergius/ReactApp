@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import FeatureArticle from "../blocks/FeatureArticle";
 import TutorialDesign from "../blocks/TutorialDesign";
 import StaticBlock from "../blocks/StaticBlock";
+import PilihanEditor from '../blocks/PilihanEditor';
 
 class Blog extends React.Component{
     constructor(props) {
@@ -51,7 +52,7 @@ class Blog extends React.Component{
                 <div className="whitearea">
                     <TutorialDesign />
                 </div>
-                <>
+                <div className='dark'>
                     {blogStaticBlock && (
                         <StaticBlock
                             blockTitle={blogStaticBlock.field_title}
@@ -62,7 +63,10 @@ class Blog extends React.Component{
                             blockLinkUrl={blogStaticBlock.field_link && blogStaticBlock.field_link.uri}
                         />
                     )}
-                </>
+                </div>
+                <div className="whitearea">
+                    <PilihanEditor />
+                </div>
             </div>
         );
     }
