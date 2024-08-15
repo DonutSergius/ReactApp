@@ -13,7 +13,7 @@ class SocialLinks extends React.Component {
         const socialLinks = await Service.getSocialLink();
         const socialImages = await Promise.all(
             socialLinks.data.field_social_links.map(async (item) => {
-                const url = Service.getImage(item.field_icon_svg);
+                const url = Service.getImage(item.field_icon_svg.uri.url);
                 return {
                     ...item,
                     imageUrl: url,
@@ -28,8 +28,9 @@ class SocialLinks extends React.Component {
 
     render() {
         const { socialImages } = this.state;
+        const { isBurgerOpen } = this.props;
         return (
-            <div className="header-social_links col-lg-3 col-md-6 col-6">
+            <div className={`header-social_links ${isBurgerOpen ? 'open' : ''}`}>
                 {socialImages.map((link, index) => {
                     const socialClassName = `social-link social-link-${link.field_icon_svg.meta.alt}`;
                     return (
