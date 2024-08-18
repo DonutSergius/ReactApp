@@ -21,7 +21,7 @@ class BurgerMenu extends React.Component {
     render () {
         const {menuLinks, socialLinks} = this.state
         const {isBurgerOpen} = this.props;
-// <div className={`${isBurgerOpen ? 'header-burger-menu-open' : 'header-burger-menu'}`}>
+
         return (
             <div className={`header-burger-menu ${isBurgerOpen ? 'open' : ''}`}>
                 <div className="burger-menu-links">

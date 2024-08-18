@@ -1,5 +1,28 @@
 @import "variables";
 
+.yellow{
+    .static-block-container {
+        margin-top: 40px;
+        .static-block-data {
+            align-self: auto;
+            &_title{
+                font-weight: 700;
+                color: $blackTextColor;
+            }
+            &_body {
+                color: $blackTextColor;
+            }
+            &_read-more {
+                a {
+                    color: white;
+                    border: 1px solid $blackTextColor;
+                    background-color: $blackTextColor;
+                }
+            }
+        }
+    }
+}
+
 .static-block-container {
     margin-top: -20px;
     max-height: 640px;
@@ -221,6 +244,16 @@
 }
 
 @media (max-width: 767px) {
+
+    .yellow{
+        .static-block-container {
+            margin-top: 40px;
+            .static-block-data {
+                padding-top: 0;
+            }
+        }
+    }
+
     .static-block-container {
         max-height: 1150px;
         .static-block-data {

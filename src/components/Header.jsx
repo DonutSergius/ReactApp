@@ -23,7 +23,6 @@ class Header extends React.Component {
         });
     }
 
-    com
     toggleBurger = () => {
         this.setState(prevState => {
             const newState = { isBurgerOpen: !prevState.isBurgerOpen };

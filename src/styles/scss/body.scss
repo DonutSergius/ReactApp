@@ -23,6 +23,13 @@ body{
   background-color: $blackBackground;
 }
 
+.yellow {
+  position: relative;
+  z-index: 1;
+  padding: 20px 40px 40px 40px;
+  background-color: #FFD335;
+}
+
 .whitearea {
   position: relative;
   z-index: 1;
