@@ -51,6 +51,7 @@ class PilihanEditor extends React.Component {
 
         const settings = {
             dots: false,
+            arrows: false,
             infinite: true,
             slidesToShow: 4,
             swipeToSlide: true,

@@ -2,7 +2,7 @@
 
 .yellow{
     .static-block-container {
-        margin-top: 40px;
+        margin-top: $mediumMargin;
         .static-block-data {
             align-self: auto;
             &_title{
@@ -11,12 +11,45 @@
             }
             &_body {
                 color: $blackTextColor;
+                opacity: 1;
             }
             &_read-more {
                 a {
-                    color: white;
+                    color: $whiteTextColor;
                     border: 1px solid $blackTextColor;
                     background-color: $blackTextColor;
+
+                    &:hover {
+                        color: $blackTextColor;
+                        background-color: $yellowBackground;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.dark {
+    .static-block-container {
+        margin-top: -$smallMargin;
+        .static-block-data {
+            align-self: center;
+
+            &_title{
+                color: $whiteTextColor;
+            }
+            &_body {
+                color: $whiteTextColor;
+                opacity: 0.5;
+            }
+            &_read-more {
+                a {
+                    color: $whiteTextColor;
+                    border: 1px solid $whiteTextColor;
+                    &:hover {
+                        background-color: $whiteTextColor;
+                        color: $blackTextColor;
+                    }
                 }
             }
         }
@@ -24,33 +57,28 @@
 }
 
 .static-block-container {
-    margin-top: -20px;
     max-height: 640px;
     .static-block-data {
         height: max-content;
         padding: 0 40px;
-        align-self: center;
 
         &_title{
             font-weight: 500;
             font-size: 55px;
             line-height: 65px;
             margin-bottom: 30px;
-            color: white;
         }
         &_body {
             padding-right: 50px;
             margin-bottom: 50px;
             font-size: 22px;
-            color: $whiteTextColor;
         }
         &_read-more {
             a {
                 font-size: 20px;
                 font-weight: 400;
-                color: white;
-                border: 1px solid white;
                 padding: 15px 75px;
+                transition: background-color 0.3s, color 0.3s;
             }
         }
     }
@@ -68,79 +96,26 @@
     .static-block-container {
         max-height: 600px;
         .static-block-data {
-            height: max-content;
-            padding: 0 40px;
-            align-self: center;
-    
             &_title{
-                font-weight: 500;
                 font-size: 60px;
                 line-height: 70px;
-                margin-bottom: 40px;
-                color: white;
+                margin-bottom: $mediumMargin;
             }
             &_body {
-                padding-right: 50px;
-                margin-bottom: 50px;
                 font-size: 24px;
-                color: $whiteTextColor;
             }
             &_read-more {
                 a {
                     font-size: 24px;
-                    font-weight: 400;
-                    color: white;
-                    border: 1px solid white;
                     padding: 18px 80px;
                 }
             }
         }
         .static-block-image {
             height: 600px;
-            img {
-                position: relative;
-                z-index: 1;
-                width: 100%;
-            }
         }
     }
 }
-
-/* .static-block-container {
-    max-height: 600px;
-    .static-block-data {
-        height: 600px;
-        align-self: center;
-
-        &_title{
-            margin-bottom: 50px;
-            font-weight: bold;
-            font-size: 4vw;
-            color: white;
-        }
-        &_body {
-            margin-bottom: 65px;
-            font-size: 1.5vw;
-            color: $whiteTextColor;
-        }
-        &_read-more {
-            a {
-                font-size: 1.5vw;
-                color: white;
-                border: 1px solid white;
-                padding: 15px 75px;
-            }
-        }
-    }
-    .static-block-image {
-        height: 600px;
-        img {
-            position: relative;
-            z-index: 1;
-            width: 100%;
-        }
-    }
-} */
 
 @media (max-width: 1280px) {
     .static-block-container {
@@ -149,29 +124,20 @@
                 margin-bottom: 30px;
                 font-weight: bold;
                 font-size: 4vw;
-                color: white;
             }
             &_body {
                 margin-bottom: 45px;
                 font-size: 1.5vw;
-                color: $whiteTextColor;
             }
             &_read-more {
                 a {
                     font-size: 1.5vw;
-                    color: white;
-                    border: 1px solid white;
                     padding: 15px 75px;
                 }
             }
         }
         .static-block-image {
             height: 600px;
-            img {
-                position: relative;
-                z-index: 1;
-                width: 100%;
-            }
         }
     }     
 }
@@ -211,7 +177,7 @@
         .static-block-data {
             height: max-content;    
             &_title{
-                margin-bottom: 20px;
+                margin-bottom: $smallMargin;
                 font-size: 3.5vw;
                 line-height: 40px;
             }
@@ -244,10 +210,9 @@
 }
 
 @media (max-width: 767px) {
-
     .yellow{
         .static-block-container {
-            margin-top: 40px;
+            margin-top: 0;
             .static-block-data {
                 padding-top: 0;
             }
@@ -261,17 +226,14 @@
             padding: 50px 10px;
     
             &_title{
-                font-weight: 500;
                 font-size: 8vw;
                 line-height: 70px;
-                margin-bottom: 40px;
-                color: white;
+                margin-bottom: $mediumMargin;
             }
             &_body {
                 padding-right: 0;
                 margin-bottom: 50px;
                 font-size: 4vw;
-                color: $whiteTextColor;
             }
             &_read-more {
                 height: 100px;
@@ -281,19 +243,12 @@
                     width: 100%;
                     font-size: 3.5vw;
                     font-weight: 400;
-                    color: white;
-                    border: 1px solid white;
                     text-align: center;
                 }
             }
         }
         .static-block-image {
             height: 700px;
-            img {
-                position: relative;
-                z-index: 1;
-                width: 100%;
-            }
         }
     }
 }
@@ -303,38 +258,22 @@
         max-height: 800px;
         .static-block-data {    
             &_title{
-                font-weight: 500;
                 font-size: 8vw;
                 line-height: 50px;
-                margin-bottom: 20px;
-                color: white;
+                margin-bottom: $smallMargin;
             }
             &_body {
                 margin-bottom: 30px;
-                font-size: 3.5vw;
-                color: $whiteTextColor;
             }
             &_read-more {
                 height: 30px;
                 a {
                     padding: 10px 0;
-                    display: block;
-                    width: 100%;
-                    font-size: 3.5vw;
-                    font-weight: 400;
-                    color: white;
-                    border: 1px solid white;
-                    text-align: center;
                 }
             }
         }
         .static-block-image {
             height: 700px;
-            img {
-                position: relative;
-                z-index: 1;
-                width: 100%;
-            }
         }
     }
 }
@@ -344,39 +283,19 @@
         max-height: 550px;
         .static-block-data {    
             &_title{
-                font-weight: 500;
                 font-size: 7vw;
                 line-height: 30px;
-                margin-bottom: 20px;
-                color: white;
             }
             &_body {
                 padding-right: 0;
-                margin-bottom: 20px;
-                font-size: 3vw;
-                color: $whiteTextColor;
+                margin-bottom: $smallMargin;
             }
             &_read-more {
                 height: 10px;
-                a {
-                    padding: 10px 0;
-                    display: block;
-                    width: 100%;
-                    font-size: 3vw;
-                    font-weight: 400;
-                    color: white;
-                    border: 1px solid white;
-                    text-align: center;
-                }
             }
         }
         .static-block-image {
             height: 700px;
-            img {
-                position: relative;
-                z-index: 1;
-                width: 100%;
-            }
         }
     }
 }

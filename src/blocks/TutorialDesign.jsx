@@ -33,6 +33,7 @@ class TutorialDesign extends React.Component {
         const settings = {
             dots: false,
             infinite: true,
+            arrow: false,
             slidesToShow: 4,
             swipeToSlide: true,
             responsive: [
