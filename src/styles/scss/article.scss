@@ -1,15 +1,13 @@
 @import "variables";
 
 .important_teaser{
-  margin-bottom: 40px;
+  margin-bottom: $mediumMargin;
 }
 
 .feature-articles {
-
   .article-conatiner {
-    margin: 0 20px;
+    margin: 0 $smallMargin;
   }
-
   a{
     text-decoration: none;
     color: $whiteTextColor;
@@ -24,7 +22,7 @@
       font-weight: normal;
       font-size: 14px;
       line-height: 14px;
-      color: #ffffff;
+      color: $whiteTextColor;
       opacity: 0.3;
       padding: 20px 0 10px;
     }
@@ -33,14 +31,15 @@
       font-size: 32px;
       line-height: 42px;
       letter-spacing: 0;
-      color: #ffffff;
+      color: $whiteTextColor;
       opacity: 0.8;
       margin-bottom: 16px;
     }
     &_body {
       font-size: 18px;
       line-height: 28px;
-      color: rgba(255, 255, 255, 0.5);
+      color: $whiteTextColor;
+      opacity: 0.5;
       font-weight: 200;
     }
   }
@@ -48,7 +47,7 @@
 
 .second_teaser {
   .article-conatiner {
-    margin-top: 20px;
+    margin-top: $smallMargin;
     padding-bottom: 38px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     &:first-child {
@@ -129,7 +128,7 @@
 
 @media (max-width: 767px) {
   .important_teaser{
-    margin-bottom: 20px;
+    margin-bottom: $smallMargin;
     .article-conatiner{
       margin: 0;
       .article-data{
@@ -153,7 +152,7 @@
 
   .second_teaser {
     .article-conatiner {
-      margin: 20px 0 0 0;
+      margin: $smallMargin 0 0 0;
       .article-image{
         order: 2;
         max-width: 41.66666667%;;

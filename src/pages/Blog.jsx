@@ -6,6 +6,7 @@ import TutorialDesign from "../blocks/TutorialDesign";
 import StaticBlock from "../blocks/StaticBlock";
 import PilihanEditor from '../blocks/PilihanEditor';
 import ArtikelTerbaru from '../blocks/ArtikelTerbaru';
+import ScrollToTop from "../components/ScrollToTop";
 
 class Blog extends React.Component{
     constructor(props) {
@@ -95,6 +96,7 @@ class Blog extends React.Component{
                 <div className="whitearea">
                     <ArtikelTerbaru />
                 </div>
+                <ScrollToTop />
             </div>
         );
     }

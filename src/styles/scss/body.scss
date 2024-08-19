@@ -27,7 +27,7 @@ body{
   position: relative;
   z-index: 1;
   padding: 20px 40px 40px 40px;
-  background-color: #FFD335;
+  background-color: $yellowBackground;
 }
 
 .whitearea {
@@ -35,6 +35,12 @@ body{
   z-index: 1;
   padding: 60px 40px 40px 40px;
   background-color: $whiteBackground;
+}
+
+.slick-slider {
+  .slick-arrow {
+    display: none !important;
+  }
 }
 
 @media (min-width: 1680px) {
@@ -54,5 +60,12 @@ body{
 @media(max-width: 767px) {
   .dark {
     padding: 0 20px;
+  }
+
+  .whitearea {
+   padding: 40px 20px 20px 20px;
+  }
+  .yellow {
+    padding: 20px;
   }
 }
