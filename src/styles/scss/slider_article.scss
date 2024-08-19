@@ -1,0 +1,79 @@
+@import "variables";
+@import "mixin";
+
+.pilihan-editor, .tutorial-design {
+  &-container {
+    .pilihan-editor, .tutorial-design {
+      &-title {
+        @include teaserBlockTitle;
+      }
+    }
+
+    .slick-list {
+      .slick-slide {
+        border-right: 1px solid #e5e5e5;
+      }
+    }
+  }
+}
+
+.pilihan-editor {
+  &-container {
+    .slick-list {
+      .slick-slide {
+        border-right: 1px solid #e5e5e5;
+
+        .article-conatiner {
+          .article {
+            &-image {
+              aspect-ratio: 16/9;
+
+              img {
+                object-fit: cover;
+                height: 100%;
+              }
+            }
+
+            &-data {
+              @include teaserBlockData;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.industri-design-container {
+  padding-top: 40px;
+
+  .industri-design-title {
+    @include teaserBlockTitle;
+    color: $whiteTextColor;
+  }
+
+  .industri-design-slider-container {
+    .slick-list {
+      .slick-slide {
+        border-right: 1px solid rgb(128, 128, 128, 0.5);
+
+        .article-conatiner {
+          .article {
+            &-image {
+              aspect-ratio: 16/9;
+
+              img {
+                object-fit: cover;
+                height: 100%;
+              }
+            }
+
+            &-data {
+              @include teaserBlockData;
+            }
+          }
+        }
+      }
+    }
+  }
+}

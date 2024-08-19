@@ -1,0 +1,34 @@
+@import "variables";
+@import "mixin";
+
+.artikel-lainnya-container {
+  .artikel-lainnya {
+    &-title {
+      @include teaserBlockTitle;
+    }
+
+    &-articles {
+      .article-conatiner {
+        margin-top: $bigMargin;
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+      .article {
+        padding: 0 0 0 $smallPadding;
+
+        &-image {
+          align-items: end;
+          display: flex;
+          order: 2;
+          aspect-ratio: 16/9;
+
+          img {
+            object-fit: cover;
+            height: 214px;
+          }
+        }
+      }
+    }
+  }
+}

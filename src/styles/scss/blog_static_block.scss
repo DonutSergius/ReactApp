@@ -17,7 +17,7 @@
                 a {
                     color: $whiteTextColor;
                     border: 1px solid $blackTextColor;
-                    background-color: $blackTextColor;
+                    background-color: $blackBackground;
 
                     &:hover {
                         color: $blackTextColor;
@@ -223,7 +223,7 @@
         max-height: 1150px;
         .static-block-data {
             height: max-content;
-            padding: 50px 10px;
+            padding: 50px $smallPadding;
     
             &_title{
                 font-size: 8vw;
@@ -268,7 +268,7 @@
             &_read-more {
                 height: 30px;
                 a {
-                    padding: 10px 0;
+                    padding: $smallPadding 0;
                 }
             }
         }

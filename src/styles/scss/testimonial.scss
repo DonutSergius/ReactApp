@@ -1,0 +1,71 @@
+@import "variables";
+@import "mixin";
+
+.testimonial-container {
+  padding-left: 20px;
+  .testimonial {
+    &-title {
+      @include teaserBlockTitle;
+    }
+
+    &-articles {
+      .article-conatiner {
+        width: inherit;
+        padding-left: 20px;
+
+        .article {
+          display: flex;
+          width: inherit;
+          border-bottom: 1px solid #e5e5e5;
+          border-left: 1px solid #e5e5e5;
+          text-align: left;
+          padding: 10px 0 20px 20px;
+          margin-top: 0;
+
+          &-image {
+            padding-left: 0;
+            padding-right: 16px;
+            width: max-content;
+            img {
+              border-radius: 50%;
+              margin: 0;
+              padding: 0;
+              width: 36px;
+            }
+          }
+
+          &-data {
+            display: flex;
+            flex-wrap: wrap;
+            flex: 1;
+            padding: 0;
+
+            &_date {
+              display: none;
+            }
+
+            &_title {
+              order: 2;
+              font-size: 13px;
+              line-height: 22px;
+              font-weight: 400;
+              letter-spacing: 0.5px;
+              margin-top: 6px;
+              color: #121212;
+            }
+
+            &_body {
+              opacity: 1;
+              padding: 0;
+              font-size: 13px;
+              line-height: 21px;
+              color: #404852;
+              font-weight: 300;
+              letter-spacing: 0.5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

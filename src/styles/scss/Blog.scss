@@ -12,7 +12,7 @@
     padding: 40px 0;
     border-top: 1px solid rgba(255,255,255,0.1);
     border-bottom: 1px solid rgba(255,255,255,0.1);
-    color: #ffffff;
+    color: $whiteTextColor;
   }
 }
 
@@ -44,7 +44,7 @@
   .blog-container {
     .title {
       margin: 0px 0px 28px 0px;
-      padding: 20px 0;
+      padding: $mediumPadding 0;
       font-size: 19vw;
       line-height: 100px;
     }
@@ -54,9 +54,6 @@
 @media (max-width: 520px) {
   .blog-container {
     .title {
-      margin: 0px 0px 28px 0px;
-      padding: 20px 0;
-      font-size: 19vw;
       line-height: 90px;
     }
   }
@@ -65,8 +62,6 @@
 @media (max-width: 446px) {
   .blog-container {
     .title {
-      margin: 0px 0px 28px 0px;
-      padding: 20px 0;
       font-size: 18vw;
       line-height: 70px;
     }
@@ -77,8 +72,6 @@
   .blog-container {
     .title {
       margin: 0px 0px 28px 0px;
-      padding: 20px 0;
-      font-size: 18vw;
       line-height: 50px;
     }
   }

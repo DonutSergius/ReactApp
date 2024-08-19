@@ -19,14 +19,14 @@ body{
 }
 
 .dark {
-  padding: 20px 40px 40px 40px;
+  padding: $mediumPadding 40px 40px 40px;
   background-color: $blackBackground;
 }
 
 .yellow {
   position: relative;
   z-index: 1;
-  padding: 20px 40px 40px 40px;
+  padding: $mediumPadding 40px 40px 40px;
   background-color: $yellowBackground;
 }
 
@@ -59,13 +59,13 @@ body{
 
 @media(max-width: 767px) {
   .dark {
-    padding: 0 20px;
+    padding: 0 $mediumPadding;
   }
 
   .whitearea {
-   padding: 40px 20px 20px 20px;
+   padding: 40px $mediumPadding $mediumPadding $mediumPadding;
   }
   .yellow {
-    padding: 20px;
+    padding: $mediumPadding;
   }
 }

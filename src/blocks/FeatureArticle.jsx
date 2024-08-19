@@ -41,7 +41,7 @@ class FeatureArticle extends React.Component {
     render () {
         const { importantArticle, otherArticles } = this.state;
         return (
-            <div className="feature-articles row">
+            <div className="feature-articles-container row">
                 <div className="important_teaser col-lg-6 col-md-12">
                     <Article
                         articleLink={importantArticle.articleLink}

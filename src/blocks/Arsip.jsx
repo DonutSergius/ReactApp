@@ -3,7 +3,7 @@ import Article from "../components/Article/Article";
 import Service from "../services/Service";
 import { stripHtmlTags, extractHref } from "../utils/dataProcessor";
 
-class ArtikelLainnya extends React.Component {
+class Arsip extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -12,22 +12,18 @@ class ArtikelLainnya extends React.Component {
     }
 
     async componentDidMount() {
-        const response = await Service.getLatestArticles();
-        const responseImageUrls = await Promise.all(response.map(item => Service.getImage(item.field_image_1)));
-        const responseBody = response.map(item => stripHtmlTags(item.body));
+        const response = await Service.getArchives();
         const responseTitles = response.map(item => ({
             title: stripHtmlTags(item.title_1),
             link: extractHref(item.title_1)
         }));
 
-        const trimmedResponse = response.slice(1, -1);
+        const trimmedResponse = response.slice(1);
 
         const articles = trimmedResponse.map((item, index) => ({
-            articleImages: responseImageUrls[index + 1],
             articleDate: item.field_date,
             articleTitle: responseTitles[index + 1].title,
             articleLink: responseTitles[index + 1].link,
-            articleBody: responseBody[index + 1],
         }));
 
         this.setState({ articles });
@@ -35,23 +31,19 @@ class ArtikelLainnya extends React.Component {
 
     render() {
         const { articles } = this.state;
-        const blockTitle = "Artikel lainnya";
+        const blockTitle = "Arsip 2021";
 
         return (
-            <div className="artikel-lainnya-container row">
-                <div className="artikel-lainnya-title"> {blockTitle} </div>
-                <div className="artikel-lainnya-articles">
+            <div className="arsip-container row">
+                <div className="arsip-title"> {blockTitle} </div>
+                <div className="arsip-articles">
                     {articles.map((article, index) => (
                         <Article
                             key={index}
                             articleLink={article.articleLink}
-                            imageUrl={article.articleImages}
-                            imageAlt="image"
                             articleDate={article.articleDate}
                             articleTitle={article.articleTitle}
-                            articleBody={article.articleBody}
-                            articleImageClass="col-lg-5 col-4"
-                            articleDataClass="col-lg-7 col-8"
+
                         />
                     ))}
                 </div>
@@ -60,4 +52,4 @@ class ArtikelLainnya extends React.Component {
     }
 }
 
-export default ArtikelLainnya;
+export default Arsip;

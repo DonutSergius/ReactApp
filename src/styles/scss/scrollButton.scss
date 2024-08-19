@@ -1,9 +1,11 @@
+@import "variables";
+
 .scroll_button {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: $mediumPadding;
+  right: $mediumPadding;
   font-size: 13px;
-  padding: 10px 15px;
+  padding: $smallPadding 15px;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   cursor: pointer;
