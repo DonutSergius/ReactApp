@@ -2,11 +2,15 @@ import React from 'react';
 import Service from "../services/Service";
 import Header from "../components/Header";
 import FeatureArticle from "../blocks/FeatureArticle";
-import TutorialDesign from "../blocks/TutorialDesign";
+import TutorialDesign from "../blocks/BlockWithslider/TutorialDesign";
 import StaticBlock from "../blocks/StaticBlock";
-import PilihanEditor from '../blocks/PilihanEditor';
+import PilihanEditor from '../blocks/BlockWithslider/PilihanEditor';
 import ArtikelTerbaru from '../blocks/ArtikelTerbaru';
 import ScrollToTop from "../components/ScrollToTop";
+import IndustriDesign from "../blocks/BlockWithslider/IndustriDesign";
+import { stripHtmlTags } from "../utils/dataProcessor";
+import BlockWithSidebar from "../blocks/BlockWithSidebar";
+
 
 class Blog extends React.Component{
     constructor(props) {
@@ -24,13 +28,13 @@ class Blog extends React.Component{
 
     async componentDidMount() {
         const rawHtml = await Service.getTitleLogo();
-        const title = this.stripHtmlTags(rawHtml);
+        const title = stripHtmlTags(rawHtml);
 
         const blockData = await Service.getBlogStaticBlock();
-        const blockDataBody = this.stripHtmlTags(blockData.body.processed);
+        const blockDataBody = stripHtmlTags(blockData.body.processed);
         const blockDataImageUrl = await Service.getImage(blockData.field_image.uri.url);
         const secondblockData = await Service.getSecondStaticBlock();
-        const secondblockDataBody = this.stripHtmlTags(secondblockData.body.processed);
+        const secondblockDataBody = stripHtmlTags(secondblockData.body.processed);
         const secondblockDataImageUrl = await Service.getImage(secondblockData.field_image.uri.url);
         this.setState({
             title: title,
@@ -41,10 +45,6 @@ class Blog extends React.Component{
             secondblogStaticBlockBody: secondblockDataBody,
             secondblogStaticBlockImageUrl: secondblockDataImageUrl,
         });
-    }
-
-    stripHtmlTags(text) {
-        return text.replace(/<\/?[^>]+>/gi, '');
     }
 
     render () {
@@ -95,6 +95,12 @@ class Blog extends React.Component{
                 </div>
                 <div className="whitearea">
                     <ArtikelTerbaru />
+                </div>
+                <div className="dark">
+                    <IndustriDesign />
+                </div>
+                <div className="whitearea">
+                    <BlockWithSidebar />
                 </div>
                 <ScrollToTop />
             </div>

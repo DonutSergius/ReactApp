@@ -1,6 +1,7 @@
 import React from "react";
-import Article from "../components/Article";
+import Article from "../components/Article/Article";
 import Service from "../services/Service";
+import { stripHtmlTags } from "../utils/dataProcessor";
 
 class FeatureArticle extends React.Component {
     constructor(props) {
@@ -18,7 +19,7 @@ class FeatureArticle extends React.Component {
         const importantImageUrl = await Service.getImage(responseImportant.field_image_1);
         const otherImageUrls = await Promise.all(responseOther.map(item => Service.getImage(item.field_image_1)));
 
-        const importantBody = this.stripHtmlTags(responseImportant.body);
+        const importantBody = stripHtmlTags(responseImportant.body);
 
         this.setState({
             importantArticle: {
@@ -35,10 +36,6 @@ class FeatureArticle extends React.Component {
                 articleLink: item.view_node,
             })),
         });
-    }
-
-    stripHtmlTags(text) {
-        return text.replace(/<\/?[^>]+>/gi, '');
     }
 
     render () {

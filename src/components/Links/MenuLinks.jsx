@@ -18,7 +18,6 @@ class MenuLinks extends React.Component {
     componentDidUpdate(prevProps) {
         if (prevProps.isBurgerOpen !== this.props.isBurgerOpen) {
             console.log('MenuLinks isBurgerOpen updated:', this.props.isBurgerOpen);
-            // Виконати дії при зміні стану
         }
     }
 

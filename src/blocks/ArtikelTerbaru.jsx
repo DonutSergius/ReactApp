@@ -1,6 +1,7 @@
 import React from 'react';
-import Article from "../components/Article";
+import Article from "../components/Article/Article";
 import Service from "../services/Service";
+import { stripHtmlTags, extractHref } from "../utils/dataProcessor";
 
 class ArtikelTerbaru extends React.Component {
     constructor(props) {
@@ -15,9 +16,9 @@ class ArtikelTerbaru extends React.Component {
         const responseImageUrls = await Promise.all(response.map(item => Service.getImage(item.field_image_1)));
         const responseBody = await Promise.all(response.map(item => this.stripHtmlTags(item.body)));
         const responseTitles = response.map(item => {
-            const href = this.extractHref(item.title_1);
+            const href = extractHref(item.title_1);
             return {
-                title: this.stripHtmlTags(item.title_1),
+                title: stripHtmlTags(item.title_1),
                 link: href
             };
         });

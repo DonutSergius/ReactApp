@@ -598,9 +598,11 @@ header .header-menu_links a {
 }
 header .header-menu_links a:hover {
   color: #ffffff;
+  opacity: 1;
 }
 header .header-menu_links a.active {
   color: #ffffff;
+  opacity: 1;
 }
 header .header-social_links {
   padding: 36px 0px 0px 0px;
@@ -704,6 +706,62 @@ header .header-social_links .social-link img {
     display: none;
   }
 }
+.industri-design-container {
+  padding-top: 40px;
+}
+.industri-design-container .industri-design-title {
+  text-transform: uppercase;
+  color: #121212;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+  padding: 0 20px;
+  opacity: 0.3;
+  color: rgb(255, 255, 255);
+}
+.industri-design-container .industri-design-slider-container .slick-list .slick-slide {
+  border-right: 1px solid rgba(128, 128, 128, 0.5);
+}
+.industri-design-container .industri-design-slider-container .slick-list .slick-slide .article-conatiner .article {
+  padding: 0 20px;
+}
+.industri-design-container .industri-design-slider-container .slick-list .slick-slide .article-conatiner .article-image {
+  aspect-ratio: 16/9;
+}
+.industri-design-container .industri-design-slider-container .slick-list .slick-slide .article-conatiner .article-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.industri-design-container .industri-design-slider-container .slick-list .slick-slide .article-conatiner .article-data_date {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 15px;
+  color: rgb(255, 255, 255);
+  opacity: 0.5;
+  padding: 16px 0 10px;
+}
+.industri-design-container .industri-design-slider-container .slick-list .slick-slide .article-conatiner .article-data_title {
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+  line-height: 35px;
+  letter-spacing: 0.3px;
+  font-weight: 600;
+}
+.industri-design-container .industri-design-slider-container .slick-list .slick-slide .article-conatiner .article-data_body {
+  padding-top: 20px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  color: rgb(255, 255, 255);
+  opacity: 0.7;
+}
+
 .pilihan-editor-container .pilihan-editor-title {
   text-transform: uppercase;
   color: #121212;
@@ -777,6 +835,8 @@ header .header-social_links .social-link img {
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   cursor: pointer;
+  background-color: white;
+  z-index: 999;
 }
 .tutorial-design-container .tutorial-design-title {
   text-transform: uppercase;

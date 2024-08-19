@@ -21,7 +21,7 @@
               }
 
               &-data {
-                @include teaserBlockData;
+                @include teaserBlockData($blackTextColor);
               }
             }
           }

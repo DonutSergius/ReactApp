@@ -1,6 +1,42 @@
 @import "variables";
 @import "mixin";
 
+.industri-design-container {
+  padding-top: 40px;
+  .industri-design-title {
+    @include teaserBlockTitle;
+    color: $whiteTextColor;
+  }
+
+  .industri-design-slider-container {
+    .slick-list {
+      .slick-slide {
+        border-right: 1px solid rgb(128, 128, 128, 0.5);
+
+        .article-conatiner {
+          .article {
+            padding: 0 20px;
+
+            &-image {
+              aspect-ratio: 16/9;
+
+              img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+              }
+            }
+
+            &-data {
+              @include teaserBlockData($whiteTextColor);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 .pilihan-editor-container {
   .pilihan-editor-title {
     @include teaserBlockTitle;
@@ -26,7 +62,7 @@
             }
 
             &-data {
-              @include teaserBlockData;
+              @include teaserBlockData($blackTextColor);
             }
           }
         }

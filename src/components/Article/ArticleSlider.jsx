@@ -1,39 +1,32 @@
 import React from "react";
-import Service from "../services/Service";
-import Article from "../components/Article";
+import Article from "./Article";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-class TutorialDesign extends React.Component {
+class ArticleSlider extends React.Component {
     constructor(props) {
         super(props);
-        this.state ={
-           designArticle: [],
+        this.state = {
+            articles: [],
         };
     }
 
     async componentDidMount() {
-        const response = await Service.getTutorialDesign();
-        const responseImageUrls = await Promise.all(response.map(item => Service.getImage(item.field_image_1)));
-        this.setState({
-            designArticle: response.map((item, index) => ({
-                articleImages: responseImageUrls[index],
-                articleDate: item.field_date,
-                articleTitle: item.title_1,
-                articleLink: item.view_node,
-            })),
-        });
+        const { fetchData, processData } = this.props;
+        const response = await fetchData();
+        const articles = processData(response);
+
+        this.setState({ articles });
     }
 
-    render () {
-        const { designArticle } = this.state;
-        const blockTitle = "Tutorial design";
-
+    render() {
+        const { articles } = this.state;
+        const { blockTitle, containerClass, titleClass, sliderClass } = this.props;
         const settings = {
             dots: false,
+            arrows: false,
             infinite: true,
-            arrow: false,
             slidesToShow: 4,
             swipeToSlide: true,
             responsive: [
@@ -60,20 +53,20 @@ class TutorialDesign extends React.Component {
                 }
             ]
         };
-
         return (
-            <div className="tutorial-design-container">
-                <div className="tutorial-design-title"> { blockTitle } </div>
-                <div className="tutorial-design-slider-container row g-0">
+            <div className={containerClass}>
+                <div className={titleClass}> { blockTitle } </div>
+                <div className={sliderClass}>
                     <Slider {...settings}>
-                        {designArticle.map((article, index) => (
+                        {articles.map((article, index) => (
                             <div key={index}>
                                 <Article
                                     articleLink={article.articleLink}
                                     imageUrl={article.articleImages}
-                                    imageAlt="Tutorial Design slide"
+                                    imageAlt="slide"
                                     articleDate={article.articleDate}
                                     articleTitle={article.articleTitle}
+                                    articleBody={article.articleBody}
                                 />
                             </div>
                         ))}
@@ -84,4 +77,4 @@ class TutorialDesign extends React.Component {
     }
 }
 
-export default TutorialDesign;
+export default ArticleSlider;
