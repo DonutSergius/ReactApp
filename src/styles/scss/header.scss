@@ -1,19 +1,27 @@
 @import "variables";
 
-.container{
+.container {
   margin: auto;
 }
 
 header {
-  .logo {
-    width: 40px;
-    margin-right: $mediumMargin;
-  }
-
-  .header-menu_links{
+  .header-menu_links {
     align-items: center;
     display: flex;
     padding: $bigPadding 0;
+
+    a.link-to-home {
+      padding: 0;
+      margin: 0;
+      opacity: 1;
+
+      .logo {
+        width: 40px;
+        margin-right: $mediumMargin;
+      }
+    }
+
+
     a {
       margin-right: $mediumMargin;
       padding-top: 9px;
@@ -39,14 +47,19 @@ header {
     }
   }
 
-  .header-social_links{
+  .header-social_links {
     padding: 36px 0px 0px 0px;
     text-align: right;
-    .social-link{
+
+    .social-link {
       margin-left: $smallMargin;
-      img{
+
+      img {
         width: 22px;
         opacity: 0.5;
+        &:hover {
+          opacity: 1;
+        }
       }
     }
   }
@@ -55,15 +68,16 @@ header {
 
 @media (max-width: 1140px) {
 
-  .header-burger-menu{
+  .header-burger-menu {
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
 
     a {
       display: none;
     }
+
     &.open {
-      padding: 80px 0 0 0 ;
+      padding: 80px 0 0 0;
       opacity: 1;
       top: 0;
       left: 0;
@@ -74,6 +88,7 @@ header {
       height: 100vh;
       z-index: 9;
       overflow: auto;
+
       a {
         display: block;
         width: 100%;
@@ -84,15 +99,18 @@ header {
         line-height: 42px;
         padding: 32px 0 32px 32px;
 
-        border-top: 1px solid rgba(0,0,0,0.2);;
+        border-top: 1px solid rgba(0, 0, 0, 0.2);;
+
         &:before {
           padding-right: 23px;
           content: "↳";
         }
+
         &.active {
           opacity: 1;
           border-left: 3px solid $blackTextColor;
         }
+
         &:hover {
           opacity: 1;
         }
@@ -128,6 +146,7 @@ header {
       right: 10px;
       position: absolute;
       margin: 10px 0 auto auto;
+
       span {
         background-color: #000;
       }

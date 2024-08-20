@@ -9,7 +9,7 @@ import ArtikelTerbaru from '../blocks/ArtikelTerbaru';
 import ScrollToTop from "../components/ScrollToTop";
 import IndustriDesign from "../blocks/BlockWithslider/IndustriDesign";
 import { stripHtmlTags } from "../utils/dataProcessor";
-import BlockWithSidebar from "../blocks/BlockWithSidebar";
+import BlockWithSidebar from "../blocks/BlockSidebar/BlockWithSidebar";
 
 
 class Blog extends React.Component{
@@ -58,7 +58,7 @@ class Blog extends React.Component{
         } = this.state;
         return (
             <div className="blog-container">
-                <div className="dark">
+                <div className=" dark">
                     <Header />
                     <h1 className="blog-page-title title">{title}</h1>
                     <FeatureArticle />

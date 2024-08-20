@@ -1,7 +1,7 @@
 import React from 'react';
 import ArtikelLainnya from "./ArtikelLainnya";
 import Arsip from "./Arsip";
-import Service from "../services/Service";
+import Service from "../../services/Service";
 import Testimonial from "./Testimonial";
 
 class BlockWithSidebar extends React.Component {

@@ -1,4 +1,3 @@
-
 export const stripHtmlTags = (text) => text.replace(/<\/?[^>]+>/gi, '');
 
 export const extractHref = (htmlString) => {

@@ -1,7 +1,7 @@
 import React from 'react';
-import Article from "../components/Article/Article";
-import Service from "../services/Service";
-import { stripHtmlTags, extractHref } from "../utils/dataProcessor";
+import Article from "../../components/Article/Article";
+import Service from "../../services/Service";
+import { stripHtmlTags, extractHref } from "../../utils/dataProcessor";
 
 class ArtikelLainnya extends React.Component {
     constructor(props) {

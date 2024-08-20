@@ -1,8 +1,7 @@
 import React from 'react';
-import Article from "../components/Article/Article";
-import Service from "../services/Service";
-import { stripHtmlTags } from "../utils/dataProcessor";
-import Feedback from "../components/Feedback";
+import Service from "../../services/Service";
+import { stripHtmlTags } from "../../utils/dataProcessor";
+import Feedback from "../../components/Feedback";
 
 class Testimonial extends React.Component {
     constructor(props) {

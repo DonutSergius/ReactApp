@@ -1,5 +1,6 @@
 import React from "react";
 import SocialLinks from "./Links/SocialLinks";
+import { Link } from 'react-router-dom';
 import MenuLinks from "./Links/MenuLinks";
 import BurgerIcon from "./BurgerMenu/BurgerIcon";
 import Service from "../services/Service";
@@ -37,7 +38,9 @@ class Header extends React.Component {
             <header className="header-container row">
                 <div className="header-menu_container col-lg-9 col-md-6 col-6">
                     <MenuLinks isBurgerOpen={isBurgerOpen}>
-                        <img src={logoImage} alt={altText} className="logo"/>
+                        <Link to="/blog" className="link-to-home">
+                            <img src={logoImage} alt={altText} className="logo"/>
+                        </Link>
                     </MenuLinks>
                 </div>
                 <BurgerIcon onClick={this.toggleBurger} isOpen={isBurgerOpen} />
