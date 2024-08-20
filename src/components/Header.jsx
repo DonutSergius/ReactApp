@@ -39,7 +39,7 @@ class Header extends React.Component {
                 <div className="header-menu_container col-lg-9 col-md-6 col-6">
                     <MenuLinks isBurgerOpen={isBurgerOpen}>
                         <Link to="/blog" className="link-to-home">
-                            <img src={logoImage} alt={altText} className="logo"/>
+                            <img loading="lazy" width="40" height="40" src={logoImage} alt={altText} className="logo"/>
                         </Link>
                     </MenuLinks>
                 </div>

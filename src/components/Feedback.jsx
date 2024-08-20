@@ -12,7 +12,7 @@ class Feedback extends React.Component {
             <div className="feedback-conatiner">
                 <div className="feedback row">
                     <div className={`feedback-image`}>
-                        <img src={imageUrl} alt={imageAlt}/>
+                        <img loading="lazy" width="36" height="36" src={imageUrl} alt={imageAlt}/>
                     </div>
                     <div className={`feedback-data`}>
                         <div className="feedback-data_body">{feedbackBody}</div>

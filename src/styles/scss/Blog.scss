@@ -1,10 +1,9 @@
 @import "variables";
 
 .blog-container, .lain_nya-container{
-
   .title{
     text-transform: uppercase;
-    font-weight: 750;
+    font-weight: 700;
     text-align: center;
     margin: $smallMargin auto $bigMargin auto;
     line-height: 210px;
@@ -17,7 +16,7 @@
 }
 
 @media (max-width: 1680px) {
-  .blog-container {
+  .blog-container, .lain_nya-container {
     .title {
       font-size: 250px;
     }
@@ -25,7 +24,7 @@
 }
 
 @media (max-width: 1279px) {
-  .blog-container {
+  .blog-container, .lain_nya-container {
     .title {
       font-size: 19vw;
     }
@@ -33,7 +32,7 @@
 }
 
 @media (max-width: 893px) {
-  .blog-container {
+  .blog-container, .lain_nya-container {
     .title {
       font-size: 18vw;
     }
@@ -41,7 +40,7 @@
 }
 
 @media (max-width: 767px) {
-  .blog-container {
+  .blog-container, .lain_nya-container {
     .title {
       margin: 0px 0px 28px 0px;
       padding: $mediumPadding 0;
@@ -52,7 +51,7 @@
 }
 
 @media (max-width: 520px) {
-  .blog-container {
+  .blog-container, .lain_nya-container {
     .title {
       line-height: 90px;
     }
@@ -60,7 +59,7 @@
 }
 
 @media (max-width: 446px) {
-  .blog-container {
+  .blog-container, .lain_nya-container {
     .title {
       font-size: 18vw;
       line-height: 70px;
@@ -69,7 +68,7 @@
 }
 
 @media (max-width: 360px) {
-  .blog-container {
+  .blog-container, .lain_nya-container {
     .title {
       margin: 0px 0px 28px 0px;
       line-height: 50px;

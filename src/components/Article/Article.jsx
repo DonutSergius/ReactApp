@@ -18,7 +18,7 @@ class Article extends React.Component {
                     <div className="article row">
                         {imageUrl && (
                             <div className={`article-image ${articleImageClass}`}>
-                                <img src={imageUrl} alt={imageAlt}/>
+                                <img loading="lazy" width="980" height="600" src={imageUrl} alt={imageAlt}/>
                             </div>
                         )}
                         <div className={`article-data ${articleDataClass}`}>

@@ -41,7 +41,7 @@ class SocialLinks extends React.Component {
                             rel="noopener noreferrer"
                             className={socialClassName}
                         >
-                            <img src={link.imageUrl} alt={link.field_icon_svg.meta.alt}/>
+                            <img loading="lazy" width="22" height="22" src={link.imageUrl} alt={link.field_icon_svg.meta.alt}/>
                         </a>
                     );
                 })}

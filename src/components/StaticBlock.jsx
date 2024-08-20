@@ -31,7 +31,7 @@ class StaticBlock extends React.Component {
                     </div>
                 </div>
                 <div className="static-block-image col-lg-6 col-md-12">
-                    <img src={blockImageUrl} alt={blockImageAlt}/>
+                    <img loading="lazy" width="680" height="927" src={blockImageUrl} alt={blockImageAlt}/>
                 </div>
             </div>
         );

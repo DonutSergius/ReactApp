@@ -1,5 +1,11 @@
 import React from "react";
 import Service from "../../services/Service";
+import {Link, useLocation} from "react-router-dom";
+
+function BurgerMenuWrapper(props) {
+    const location = useLocation();
+    return <BurgerMenu {...props} currentPath={location.pathname}/>;
+}
 
 class BurgerMenu extends React.Component {
     constructor(props) {
@@ -18,6 +24,48 @@ class BurgerMenu extends React.Component {
             menuLinks: menuLinks.data,
         });
     }
+
+    renderMenuLink(link, index) {
+        const path = this.getPath(link);
+        const { currentPath } = this.props;
+        const isActive = currentPath === path;
+
+        console.log(`path => ${path}`);
+        console.log(`currentPath => ${currentPath}`);
+
+
+        const menuClassName = `menu-link menu-link-${link.title} ${isActive ? 'active' : ''}`;
+        const isExternal = link.link.uri.startsWith('http');
+
+        if (isExternal) {
+            return (
+                <a
+                    href={link.link.uri}
+                    className={menuClassName}
+                    key={index}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    {link.title}
+                </a>
+            );
+        } else {
+            return (
+                <Link to={path} className={menuClassName} key={index}>
+                    {link.title}
+                </Link>
+            );
+        }
+    }
+
+    getPath(link) {
+        if (link.title === "Lain nya") {
+            return "/lain_nya";
+        } else {
+            return link.link.uri.replace('internal:', '');
+        }
+    }
+
     render () {
         const {menuLinks, socialLinks} = this.state
         const {isBurgerOpen} = this.props;
@@ -25,14 +73,7 @@ class BurgerMenu extends React.Component {
         return (
             <div className={`header-burger-menu ${isBurgerOpen ? 'open' : ''}`}>
                 <div className="burger-menu-links">
-                    {menuLinks.map((link, index) => {
-                        const menuClassName = link.title === "Blog"
-                            ? `menu-link active menu-link-${link.title}`
-                            : `menu-link menu-link-${link.title}`;
-                        return (
-                            <a href={link.link.uri} className={menuClassName} key={index}>{link.title}</a>
-                        );
-                    })}
+                    {menuLinks.map((link, index) => this.renderMenuLink(link, index))}
                     {socialLinks.map((link, index) => {
                         const socialClassName = `social-link social-link-${link.field_icon_svg.meta.alt}`;
                         return (
@@ -53,4 +94,4 @@ class BurgerMenu extends React.Component {
     }
 }
 
-export default BurgerMenu;
+export default BurgerMenuWrapper;

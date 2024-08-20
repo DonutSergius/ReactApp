@@ -29,7 +29,7 @@ class BlockWithSidebar extends React.Component {
                 </div>
                 <div className="right-container col-lg-4">
                     <Arsip />
-                    <img src={sidebarImage} alt="sidebar_image"/>
+                    <img loading="lazy" width="680" height="900" src={sidebarImage} alt="sidebar_image"/>
                     <Testimonial />
 
                 </div>
