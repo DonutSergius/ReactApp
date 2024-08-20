@@ -62,3 +62,14 @@
     }
   }
 }
+
+@media (max-width: 991px) {
+  .arsip-container {
+    padding: 0;
+  }
+}
+@media (max-width: 767px) {
+  .arsip-container {
+    padding: 20px 0 60px;
+  }
+}

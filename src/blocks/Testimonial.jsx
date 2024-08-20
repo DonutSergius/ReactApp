@@ -2,12 +2,13 @@ import React from 'react';
 import Article from "../components/Article/Article";
 import Service from "../services/Service";
 import { stripHtmlTags } from "../utils/dataProcessor";
+import Feedback from "../components/Feedback";
 
 class Testimonial extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            articles: [],
+            feedbacks: [],
         };
     }
 
@@ -19,30 +20,30 @@ class Testimonial extends React.Component {
         }));
         const trimmedResponse = response.slice(1);
 
-        const articles = trimmedResponse.map((item, index) => ({
-            articleTitle: `@${item.field_remember}`,
-            articleBody: responseTitles[index + 1].body,
-            articleImageUrl: responseTitles[index + 1].imageUrl,
+        const feedbacks = trimmedResponse.map((item, index) => ({
+            feedbackRemeber: `@${item.field_remember}`,
+            feedbackBody: responseTitles[index + 1].body,
+            feedbackImageUrl: responseTitles[index + 1].imageUrl,
         }));
 
-        this.setState({ articles });
+        this.setState({ feedbacks });
     }
 
     render() {
-        const { articles } = this.state;
+        const { feedbacks } = this.state;
         const blockTitle = "Testimonial";
 
         return (
             <div className="testimonial-container row">
                 <div className="testimonial-title"> {blockTitle} </div>
-                <div className="testimonial-articles">
-                    {articles.slice().reverse().map((article, index) => (
-                        <Article
+                <div className="testimonial-feedbacks">
+                    {feedbacks.slice().reverse().map((feedback, index) => (
+                        <Feedback
                             key={index}
-                            imageUrl={article.articleImageUrl}
-                            imageAlt="testimonial_image"
-                            articleTitle={article.articleTitle}
-                            articleBody={article.articleBody}
+                            imageUrl={feedback.feedbackImageUrl}
+                            imageAlt={feedback.feedbackRemeber}
+                            feedbackRemember={feedback.feedbackRemeber}
+                            feedbackBody={feedback.feedbackBody}
                         />
                     ))}
                 </div>

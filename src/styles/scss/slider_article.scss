@@ -3,6 +3,7 @@
 
 .pilihan-editor, .tutorial-design {
   &-container {
+    padding-bottom: 20px;
     .pilihan-editor, .tutorial-design {
       &-title {
         @include teaserBlockTitle;
@@ -45,7 +46,7 @@
 }
 
 .industri-design-container {
-  padding-top: 40px;
+  padding: 40px 0;
 
   .industri-design-title {
     @include teaserBlockTitle;

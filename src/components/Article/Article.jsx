@@ -14,26 +14,11 @@ class Article extends React.Component {
         } = this.props;
         return (
             <div className="article-conatiner">
-                {articleLink ? (
-                    <a href={articleLink}>
-                        <div className="article row">
-                            {imageUrl && (
-                                <div className={`article-image ${articleImageClass}`}>
-                                    <img src={imageUrl} alt={imageAlt} />
-                                </div>
-                            )}
-                            <div className={`article-data ${articleDataClass}`}>
-                                <div className="article-data_date">{articleDate}</div>
-                                <div className="article-data_title">{articleTitle}</div>
-                                <div className="article-data_body">{articleBody}</div>
-                            </div>
-                        </div>
-                    </a>
-                ) : (
+                <a href={articleLink}>
                     <div className="article row">
                         {imageUrl && (
                             <div className={`article-image ${articleImageClass}`}>
-                                <img src={imageUrl} alt={imageAlt} />
+                                <img src={imageUrl} alt={imageAlt}/>
                             </div>
                         )}
                         <div className={`article-data ${articleDataClass}`}>
@@ -42,7 +27,7 @@ class Article extends React.Component {
                             <div className="article-data_body">{articleBody}</div>
                         </div>
                     </div>
-                )}
+                </a>
             </div>
         );
 

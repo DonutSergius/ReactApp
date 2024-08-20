@@ -2,6 +2,7 @@
 @import "mixin";
 
 .artikel-lainnya-container {
+  margin-bottom: $bigMargin;
   .artikel-lainnya {
     &-title {
       @include teaserBlockTitle;
@@ -18,14 +19,117 @@
         padding: 0 0 0 $smallPadding;
 
         &-image {
-          align-items: end;
-          display: flex;
+          margin-top: $mediumMargin;
           order: 2;
           aspect-ratio: 16/9;
 
           img {
             object-fit: cover;
-            height: 214px;
+            max-height: 214px;
+          }
+        }
+        &-data {
+          &_date {
+            padding: 0 0 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1680px) {
+  .artikel-lainnya-container {
+    .artikel-lainnya {
+      &-articles {
+        .article {
+          &-data {
+            &_body {
+              padding-top: 6px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .artikel-lainnya-container {
+    margin-bottom: 36px;
+    .artikel-lainnya {
+      &-articles {
+        .article {
+          &-image {
+            img {
+              max-height: 174px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .artikel-lainnya-container {
+    .artikel-lainnya {
+      &-title {
+        padding: 0 0 0 10px;
+      }
+
+      &-articles {
+        .article-conatiner {
+          padding-bottom: 16px;
+          margin-top: 16px;
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+        .article {
+          padding-left: 0;
+          &-image {
+            margin-top: $smallMargin;
+            img {
+              max-height: 136px;
+            }
+          }
+          &-data {
+            &_body {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .artikel-lainnya-container {
+    .artikel-lainnya {
+      &-articles {
+        .article {
+          &-image {
+            img {
+              max-height: 84px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .artikel-lainnya-container {
+    .artikel-lainnya {
+      &-articles {
+        .article {
+          &-image {
+            img {
+              max-height: 63px;
+            }
           }
         }
       }
