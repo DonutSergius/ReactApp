@@ -1,19 +1,17 @@
 @import "variables";
 
-
-  .title{
-    text-transform: uppercase;
-    font-weight: 700;
-    text-align: center;
-    margin: $smallMargin auto $bigMargin auto;
-    line-height: 210px;
-    font-size: 275px;
-    padding: 40px 0;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    color: $whiteTextColor;
-  }
-
+.title {
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+  margin: $smallMargin auto $bigMargin auto;
+  line-height: 210px;
+  font-size: 275px;
+  padding: 40px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: $whiteTextColor;
+}
 
 @media (max-width: 1680px) {
   .blog-container, .lain_nya-container {

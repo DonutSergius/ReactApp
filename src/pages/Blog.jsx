@@ -4,15 +4,32 @@ import TutorialDesign from "../blocks/BlockWithslider/TutorialDesign";
 import PilihanEditor from '../blocks/BlockWithslider/PilihanEditor';
 import ArtikelTerbaru from '../blocks/ArtikelTerbaru';
 import ScrollToTop from "../components/ScrollToTop";
+import {stripHtmlTags} from "../utils/dataProcessor";
 import IndustriDesign from "../blocks/BlockWithslider/IndustriDesign";
 import BlockWithSidebar from "../blocks/BlockSidebar/BlockWithSidebar";
 import GridInDesign from "../blocks/StaticBlock/GridInDesign";
 import GuideDesign from "../blocks/StaticBlock/GuideDesign";
+import Service from "../services/Service";
 
 
 class Blog extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            title: '',
+        };
+    }
+
+    async componentDidMount() {
+        const rawHtml = await Service.getTitleLogo();
+        const title = stripHtmlTags(rawHtml);
+
+        this.setState({
+            title: title,
+        });
+    }
     render () {
-        const title = "the blog"
+        const { title } = this.state;
         return (
             <div className="blog-container">
                 <div className="blog-feature-articles-container dark">
