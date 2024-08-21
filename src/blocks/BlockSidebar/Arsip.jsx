@@ -3,7 +3,18 @@ import Article from "../../components/Article/Article";
 import Service from "../../services/Service";
 import { stripHtmlTags, extractHref } from "../../utils/dataProcessor";
 
+/**
+ * Class component Arsip that displays a list of archived articles.
+ *
+ * @extends React.Component
+ */
 class Arsip extends React.Component {
+
+    /**
+     * Initializes the component and sets the initial state.
+     *
+     * @param {Object} props - The component's props.
+     */
     constructor(props) {
         super(props);
         this.state = {
@@ -11,6 +22,10 @@ class Arsip extends React.Component {
         };
     }
 
+    /**
+     * Called immediately after the component is mounted.
+     * Fetches the archive data and updates the component state.
+     */
     async componentDidMount() {
         const response = await Service.getArchives();
         const responseTitles = response.map(item => ({
@@ -29,6 +44,11 @@ class Arsip extends React.Component {
         this.setState({ articles });
     }
 
+    /**
+     * Renders the component.
+     *
+     * @returns {JSX.Element} - The rendered component.
+     */
     render() {
         const { articles } = this.state;
         const blockTitle = "Arsip 2021";

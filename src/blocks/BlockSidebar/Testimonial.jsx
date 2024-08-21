@@ -3,7 +3,18 @@ import Service from "../../services/Service";
 import { stripHtmlTags } from "../../utils/dataProcessor";
 import Feedback from "../../components/Feedback";
 
+/**
+ * Class component Testimonial that displays a list of archived articles.
+ *
+ * @extends React.Component
+ */
 class Testimonial extends React.Component {
+
+    /**
+     * Initializes the component and sets the initial state.
+     *
+     * @param {Object} props - The component's props.
+     */
     constructor(props) {
         super(props);
         this.state = {
@@ -11,6 +22,10 @@ class Testimonial extends React.Component {
         };
     }
 
+    /**
+     * Called immediately after the component is mounted.
+     * Fetches the archive data and updates the component state.
+     */
     async componentDidMount() {
         const response = await Service.getTestimonials();
         const responseTitles = response.map(item => ({
@@ -28,6 +43,11 @@ class Testimonial extends React.Component {
         this.setState({ feedbacks });
     }
 
+    /**
+     * Renders the component.
+     *
+     * @returns {JSX.Element} - The rendered component.
+     */
     render() {
         const { feedbacks } = this.state;
         const blockTitle = "Testimonial";

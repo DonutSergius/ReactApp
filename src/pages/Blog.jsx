@@ -4,15 +4,14 @@ import TutorialDesign from "../blocks/BlockWithslider/TutorialDesign";
 import PilihanEditor from '../blocks/BlockWithslider/PilihanEditor';
 import ArtikelTerbaru from '../blocks/ArtikelTerbaru';
 import ScrollToTop from "../components/ScrollToTop";
-import {stripHtmlTags} from "../utils/dataProcessor";
+import { stripHtmlTags } from "../utils/dataProcessor";
 import IndustriDesign from "../blocks/BlockWithslider/IndustriDesign";
 import BlockWithSidebar from "../blocks/BlockSidebar/BlockWithSidebar";
 import GridInDesign from "../blocks/StaticBlock/GridInDesign";
 import GuideDesign from "../blocks/StaticBlock/GuideDesign";
 import Service from "../services/Service";
 
-
-class Blog extends React.Component{
+class Blog extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -20,15 +19,23 @@ class Blog extends React.Component{
         };
     }
 
+    /**
+     * Lifecycle method to fetch data after the component mounts.
+     * Sets the title state with the processed title from the service.
+     */
     async componentDidMount() {
         const rawHtml = await Service.getTitleLogo();
         const title = stripHtmlTags(rawHtml);
-
         this.setState({
             title: title,
         });
     }
-    render () {
+
+    /**
+     * Renders the component.
+     * @returns {JSX.Element} The rendered component.
+     */
+    render() {
         const { title } = this.state;
         return (
             <div className="blog-container">
@@ -39,14 +46,14 @@ class Blog extends React.Component{
                 <div className="blog-tutorial-design-container whitearea">
                     <TutorialDesign />
                 </div>
-                <div className='blog-grid-in-design-container dark'>
+                <div className="blog-grid-in-design-container dark">
                     <GridInDesign />
                 </div>
                 <div className="blog-pilihan-editor-container whitearea">
                     <PilihanEditor />
                 </div>
-                <div className='blog-guide-design-container yellow'>
-                   <GuideDesign />
+                <div className="blog-guide-design-container yellow">
+                    <GuideDesign />
                 </div>
                 <div className="blog-artikel-terbaru-container whitearea">
                     <ArtikelTerbaru />

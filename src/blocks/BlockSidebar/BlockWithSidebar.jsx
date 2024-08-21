@@ -4,7 +4,17 @@ import Arsip from "./Arsip";
 import Service from "../../services/Service";
 import Testimonial from "./Testimonial";
 
+/**
+ * Class component BlockWithSidebar that renders a layout with a sidebar.
+ *
+ * @extends React.Component
+ */
 class BlockWithSidebar extends React.Component {
+    /**
+     * Initializes the component and sets the initial state.
+     *
+     * @param {Object} props - The component's props.
+     */
     constructor(props) {
         super(props);
         this.state = {
@@ -12,6 +22,10 @@ class BlockWithSidebar extends React.Component {
         }
     }
 
+    /**
+     * Called immediately after the component is mounted.
+     * Fetches the sidebar image data and updates the component state.
+     */
     async componentDidMount() {
         const response = await Service.getSidebarImage();
         this.setState( {
@@ -19,6 +33,11 @@ class BlockWithSidebar extends React.Component {
         })
     }
 
+    /**
+     * Renders the component.
+     *
+     * @returns {JSX.Element} - The rendered component.
+     */
     render () {
         const { sidebarImage } = this.state;
 

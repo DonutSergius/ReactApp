@@ -1,10 +1,16 @@
 import React from 'react';
-import {Link, useLocation} from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Service from "../../services/Service";
 
+/**
+ * Wrapper component for MenuLinks that provides the current location path from react-router.
+ *
+ * @param {Object} props - The component props.
+ * @returns {JSX.Element} - The rendered MenuLinks component with the current path.
+ */
 function MenuLinksWrapper(props) {
     const location = useLocation();
-    return <MenuLinks {...props} currentPath={location.pathname}/>;
+    return <MenuLinks {...props} currentPath={location.pathname} />;
 }
 
 class MenuLinks extends React.Component {
@@ -12,9 +18,12 @@ class MenuLinks extends React.Component {
         super(props);
         this.state = {
             menuLinks: [],
-        }
+        };
     }
 
+    /**
+     * Fetches menu links when the component mounts.
+     */
     async componentDidMount() {
         const menuLinks = await Service.getMenuLink();
         this.setState({
@@ -22,6 +31,12 @@ class MenuLinks extends React.Component {
         });
     }
 
+    /**
+     * Determines the path for a link based on its title or URI.
+     *
+     * @param {Object} link - The link object.
+     * @returns {string} - The determined path.
+     */
     getPath(link) {
         if (link.title === "Lain nya") {
             return "/lain_nya";
@@ -30,6 +45,13 @@ class MenuLinks extends React.Component {
         }
     }
 
+    /**
+     * Renders a menu link as either an internal Link or an external anchor tag.
+     *
+     * @param {Object} link - The link object.
+     * @param {number} index - The index of the link in the array.
+     * @returns {JSX.Element} - The rendered menu link.
+     */
     renderMenuLink(link, index) {
         const path = this.getPath(link);
         const { currentPath } = this.props;
@@ -58,12 +80,18 @@ class MenuLinks extends React.Component {
         }
     }
 
+    /**
+     * Renders the component.
+     *
+     * @returns {JSX.Element} - The rendered article component.
+     */
     render() {
-        const {menuLinks} = this.state;
-        const {children, isBurgerOpen} = this.props;
+        const { menuLinks } = this.state;
+        const { children, isBurgerOpen } = this.props;
+
         return (
             <div className="header-menu_links">
-            {children}
+                {children}
                 <div className={`menu-links ${isBurgerOpen ? 'open' : ''}`}>
                     {menuLinks.map((link, index) => this.renderMenuLink(link, index))}
                 </div>

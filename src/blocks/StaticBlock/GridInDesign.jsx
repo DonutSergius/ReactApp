@@ -1,18 +1,31 @@
 import React from "react";
 import Service from "../../services/Service";
-import {stripHtmlTags} from "../../utils/dataProcessor";
+import { stripHtmlTags } from "../../utils/dataProcessor";
 import StaticBlock from "../../components/StaticBlock";
 
+/**
+ * Class component GridInDesign that renders a static block with data fetched from the API.
+ *
+ * @extends React.Component
+ */
 class GridInDesign extends React.Component {
+    /**
+     * Initializes the component's state.
+     *
+     * @param {Object} props - The component's props.
+     */
     constructor(props) {
         super(props);
         this.state = {
             staticBlock: [],
-            staticBlockBody: '',
-            staticBlockImageUrl: '',
         }
     }
 
+    /**
+     * Fetches data for the static block from the API and updates the component's state.
+     *
+     * @async
+     */
     async componentDidMount() {
         const blockData = await Service.getBlogStaticBlock();
         const blockDataBody = stripHtmlTags(blockData.body.processed);
@@ -29,9 +42,13 @@ class GridInDesign extends React.Component {
         });
     }
 
-
-    render () {
-        const { staticBlock } = this.state
+    /**
+     * Renders the component.
+     *
+     * @returns {JSX.Element} - The rendered component with StaticBlock.
+     */
+    render() {
+        const { staticBlock } = this.state;
         return (
             <StaticBlock
                 blockTitle={staticBlock.blockTitle}

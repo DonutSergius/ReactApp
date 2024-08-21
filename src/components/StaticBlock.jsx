@@ -1,8 +1,9 @@
 import React from "react";
 
 class StaticBlock extends React.Component {
-
-    render () {
+    // Method to render the component
+    render() {
+        // Destructure props for easy access
         const {
             blockTitle,
             blockImageUrl,

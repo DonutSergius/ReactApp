@@ -7,25 +7,34 @@ class SocialLinks extends React.Component {
         this.state = {
             socialLinks: [],
             socialImages: [],
-        }
+        };
     }
+
+    /**
+     * Fetches social links and images when the component mounts.
+     */
     async componentDidMount() {
         const socialLinks = await Service.getSocialLink();
         const socialImages = await Promise.all(
             socialLinks.data.field_social_links.map(async (item) => {
-                const url = Service.getImage(item.field_icon_svg.uri.url);
+                const url = await Service.getImage(item.field_icon_svg.uri.url);
                 return {
                     ...item,
                     imageUrl: url,
                 };
             })
-        )
+        );
         this.setState({
             socialLinks: socialLinks.data.field_social_links,
             socialImages: socialImages,
         });
     }
 
+    /**
+     * Renders the component.
+     *
+     * @returns {JSX.Element} - The rendered article component.
+     */
     render() {
         const { socialImages } = this.state;
         const { isBurgerOpen } = this.props;
@@ -41,12 +50,12 @@ class SocialLinks extends React.Component {
                             rel="noopener noreferrer"
                             className={socialClassName}
                         >
-                            <img loading="lazy" width="22" height="22" src={link.imageUrl} alt={link.field_icon_svg.meta.alt}/>
+                            <img loading="lazy" width="22" height="22" src={link.imageUrl} alt={link.field_icon_svg.meta.alt} />
                         </a>
                     );
                 })}
             </div>
-        )
+        );
     }
 }
 

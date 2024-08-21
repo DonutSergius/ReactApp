@@ -2,9 +2,13 @@ import React from 'react';
 import ScrollToTop from "../components/ScrollToTop";
 import Quote from "../blocks/Quote";
 
-class LianNya extends React.Component{
-    render () {
-        const title = "Lain Nya"
+class LianNya extends React.Component {
+    /**
+     * Renders the Lain Nya page component.
+     * @returns {JSX.Element} The rendered component.
+     */
+    render() {
+        const title = "Lain Nya";
 
         return (
             <div className="lain_nya-container">
@@ -12,7 +16,7 @@ class LianNya extends React.Component{
                     <h1 className="lain_nya-page-title title">{title}</h1>
                 </div>
                 <Quote />
-                <ScrollToTop/>
+                <ScrollToTop />
             </div>
         );
     }

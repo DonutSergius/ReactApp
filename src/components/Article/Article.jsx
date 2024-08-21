@@ -1,6 +1,16 @@
 import React from "react";
 
+/**
+ * Class component Article that renders an article with an image, title, date, and body.
+ *
+ * @extends React.Component
+ */
 class Article extends React.Component {
+    /**
+     * Renders the component.
+     *
+     * @returns {JSX.Element} - The rendered article component.
+     */
     render() {
         const {
             articleLink,
@@ -30,7 +40,6 @@ class Article extends React.Component {
                 </a>
             </div>
         );
-
     }
 }
 

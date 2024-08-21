@@ -1,18 +1,25 @@
 import React from "react";
 
 class Feedback extends React.Component {
+    /**
+     * Renders the component.
+     *
+     * @returns {JSX.Element} - The rendered article component.
+     */
     render() {
+        // Destructuring props for ease of use in the component
         const {
             imageUrl,
             imageAlt,
             feedbackRemember,
             feedbackBody,
         } = this.props;
+
         return (
             <div className="feedback-conatiner">
                 <div className="feedback row">
                     <div className={`feedback-image`}>
-                        <img loading="lazy" width="36" height="36" src={imageUrl} alt={imageAlt}/>
+                        <img loading="lazy" width="36" height="36" src={imageUrl} alt={imageAlt} />
                     </div>
                     <div className={`feedback-data`}>
                         <div className="feedback-data_body">{feedbackBody}</div>
@@ -21,7 +28,6 @@ class Feedback extends React.Component {
                 </div>
             </div>
         );
-
     }
 }
 

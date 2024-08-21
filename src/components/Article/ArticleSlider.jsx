@@ -4,6 +4,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+/**
+ * Class component ArticleSlider that renders a slider of articles.
+ *
+ * @extends React.Component
+ */
 class ArticleSlider extends React.Component {
     constructor(props) {
         super(props);
@@ -12,6 +17,10 @@ class ArticleSlider extends React.Component {
         };
     }
 
+    /**
+     * Called immediately after the component is mounted.
+     * Fetches the article data and processes it for rendering.
+     */
     async componentDidMount() {
         const { fetchData, processData } = this.props;
         const response = await fetchData();
@@ -20,9 +29,16 @@ class ArticleSlider extends React.Component {
         this.setState({ articles });
     }
 
+    /**
+     * Renders the component.
+     *
+     * @returns {JSX.Element} - The rendered article slider component.
+     */
     render() {
         const { articles } = this.state;
         const { blockTitle, containerClass, titleClass, sliderClass } = this.props;
+
+        // Slider settings
         const settings = {
             dots: false,
             arrows: false,
@@ -53,6 +69,7 @@ class ArticleSlider extends React.Component {
                 }
             ]
         };
+
         return (
             <div className={containerClass}>
                 <div className={titleClass}> { blockTitle } </div>

@@ -2,7 +2,18 @@ import React from 'react';
 import Service from "../../services/Service";
 import ArticleSlider from "../../components/Article/ArticleSlider";
 
+/**
+ * Class component TutorialDesign that renders a slider with tutorial design articles.
+ *
+ * @extends React.Component
+ */
 class TutorialDesign extends React.Component {
+    /**
+     * Processes the API response data to format it for the slider.
+     *
+     * @param {Array} response - The data received from the API.
+     * @returns {Array} - The processed data for each article.
+     */
     processData = (response) => {
         const responseImageUrls = response.map(item => Service.getImage(item.field_image_1));
 
@@ -14,6 +25,11 @@ class TutorialDesign extends React.Component {
         }));
     }
 
+    /**
+     * Renders the component.
+     *
+     * @returns {JSX.Element} - The rendered component with ArticleSlider.
+     */
     render() {
         const blockTitle = "Tutorial design";
 

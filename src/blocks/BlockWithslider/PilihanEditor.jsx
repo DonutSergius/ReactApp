@@ -1,9 +1,20 @@
 import React from 'react';
 import Service from "../../services/Service";
 import ArticleSlider from "../../components/Article/ArticleSlider";
-import { stripHtmlTags, extractHref } from "../../utils/dataProcessor"
+import { stripHtmlTags, extractHref } from "../../utils/dataProcessor";
 
+/**
+ * Class component PilihanEditor that renders a slider with editor's choice articles.
+ *
+ * @extends React.Component
+ */
 class PilihanEditor extends React.Component {
+    /**
+     * Processes the API response data to format it for the slider.
+     *
+     * @param {Array} response - The data received from the API.
+     * @returns {Array} - The processed data for each article.
+     */
     processData = (response) => {
         const responseImageUrls = response.map(item => Service.getImage(item.field_image_1));
         const responseBody = response.map(item => stripHtmlTags(item.body));
@@ -23,9 +34,13 @@ class PilihanEditor extends React.Component {
         }));
     }
 
+    /**
+     * Renders the component.
+     *
+     * @returns {JSX.Element} - The rendered component with ArticleSlider.
+     */
     render() {
         const blockTitle = "Pilihan editor";
-
 
         return (
             <ArticleSlider

@@ -3,7 +3,17 @@ import Article from "../components/Article/Article";
 import Service from "../services/Service";
 import { stripHtmlTags } from "../utils/dataProcessor";
 
+/**
+ * Class component FeatureArticle that displays a featured article and other teaser articles.
+ *
+ * @extends React.Component
+ */
 class FeatureArticle extends React.Component {
+    /**
+     * Initializes the component's state.
+     *
+     * @param {Object} props - The component's props.
+     */
     constructor(props) {
         super(props);
         this.state = {
@@ -12,6 +22,11 @@ class FeatureArticle extends React.Component {
         };
     }
 
+    /**
+     * Fetches the important teaser and other teasers from the API and updates the component's state.
+     *
+     * @async
+     */
     async componentDidMount() {
         const responseImportant = await Service.getImportantTeaser();
         const responseOther = await Service.getOtherTeaser();
@@ -38,8 +53,14 @@ class FeatureArticle extends React.Component {
         });
     }
 
-    render () {
+    /**
+     * Renders the component.
+     *
+     * @returns {JSX.Element} - The rendered component with a featured article and other teaser articles.
+     */
+    render() {
         const { importantArticle, otherArticles } = this.state;
+
         return (
             <div className="feature-articles-container row">
                 <div className="important_teaser col-lg-6 col-md-12">
