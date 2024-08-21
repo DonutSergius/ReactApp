@@ -1,6 +1,6 @@
 @import "variables";
 
-.blog-container, .lain_nya-container{
+
   .title{
     text-transform: uppercase;
     font-weight: 700;
@@ -13,7 +13,7 @@
     border-bottom: 1px solid rgba(255,255,255,0.1);
     color: $whiteTextColor;
   }
-}
+
 
 @media (max-width: 1680px) {
   .blog-container, .lain_nya-container {

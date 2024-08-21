@@ -1,7 +1,7 @@
 import React from "react";
-import Service from "../services/Service";
-import {stripHtmlTags} from "../utils/dataProcessor";
-import StaticBlock from "../components/StaticBlock";
+import Service from "../../services/Service";
+import {stripHtmlTags} from "../../utils/dataProcessor";
+import StaticBlock from "../../components/StaticBlock";
 
 class GridInDesign extends React.Component {
     constructor(props) {

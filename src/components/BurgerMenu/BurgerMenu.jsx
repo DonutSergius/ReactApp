@@ -29,11 +29,6 @@ class BurgerMenu extends React.Component {
         const path = this.getPath(link);
         const { currentPath } = this.props;
         const isActive = currentPath === path;
-
-        console.log(`path => ${path}`);
-        console.log(`currentPath => ${currentPath}`);
-
-
         const menuClassName = `menu-link menu-link-${link.title} ${isActive ? 'active' : ''}`;
         const isExternal = link.link.uri.startsWith('http');
 

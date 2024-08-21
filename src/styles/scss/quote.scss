@@ -1,0 +1,108 @@
+@import "variables";
+@import "mixin";
+
+.quote {
+  &-element {
+    margin: 0 auto $bigMargin auto;
+    max-width: 800px;
+    width: max-content;
+  }
+  &-container {
+    text-align: center;
+  }
+  &-title {
+    font-size: 100px;
+    font-family: "Timmana";
+  }
+  &-body {
+    font-size: 44px;
+    font-family: cursive;
+  }
+  &-author {
+    text-align: left;
+    font-size: 24px;
+  }
+  &-button {
+    margin-top: 20px;
+    text-transform: uppercase;
+    padding: 20px 30px;
+    background-color: $whiteBackground;
+    border: 1px solid $blackBackground;
+    transition: background-color 0.3s, color 0.3s;
+    &:hover {
+      background-color: $blackBackground;
+      color: $whiteTextColor;
+    }
+  }
+}
+
+@media (max-width: 1140px) {
+  .quote {
+    &-element {
+      margin: 0 auto $bigMargin auto;
+      max-width: 600px;
+      width: max-content;
+    }
+    &-title {
+      font-size: 80px;
+    }
+    &-body {
+      font-size: 40px;
+    }
+    &-author {
+      font-size: 20px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .quote {
+    &-element {
+      margin: 0 auto $bigMargin auto;
+      max-width: 100%;
+      width: max-content;
+    }
+    &-container {
+      margin-top: -30px;
+    }
+    &-title {
+      font-size: 60px;
+    }
+    &-body {
+      font-size: 34px;
+    }
+    &-author {
+      font-size: 18px;
+    }
+    &-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  .quote {
+    &-element {
+      margin: 0 auto $bigMargin auto;
+      max-width: 100%;
+      width: max-content;
+    }
+    &-container {
+      margin-top: -28px;
+    }
+    &-title {
+      font-size: 40px;
+    }
+    &-body {
+      font-size: 30px;
+    }
+    &-author {
+      font-size: 18px;
+    }
+    &-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+    }
+  }
+}
