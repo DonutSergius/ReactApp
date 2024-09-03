@@ -1,6 +1,6 @@
 import React from "react";
+import {Link, useLocation} from "react-router-dom";
 import Service from "../../services/Service";
-import { Link, useLocation } from "react-router-dom";
 
 /**
  * Wrapper component for BurgerMenu that provides the current location path from react-router.
@@ -10,7 +10,7 @@ import { Link, useLocation } from "react-router-dom";
  */
 function BurgerMenuWrapper(props) {
     const location = useLocation();
-    return <BurgerMenu {...props} currentPath={location.pathname} />;
+    return <BurgerMenu {...props} currentPath={location.pathname}/>;
 }
 
 class BurgerMenu extends React.Component {
@@ -43,7 +43,7 @@ class BurgerMenu extends React.Component {
      */
     renderMenuLink(link, index) {
         const path = this.getPath(link);
-        const { currentPath } = this.props;
+        const {currentPath} = this.props;
         const isActive = currentPath === path;
         const menuClassName = `menu-link menu-link-${link.title} ${isActive ? 'active' : ''}`;
         const isExternal = link.link.uri.startsWith('http');
@@ -89,8 +89,8 @@ class BurgerMenu extends React.Component {
      * @returns {JSX.Element} - The rendered article component.
      */
     render() {
-        const { menuLinks, socialLinks } = this.state;
-        const { isBurgerOpen } = this.props;
+        const {menuLinks, socialLinks} = this.state;
+        const {isBurgerOpen} = this.props;
 
         return (
             <div className={`header-burger-menu ${isBurgerOpen ? 'open' : ''}`}>

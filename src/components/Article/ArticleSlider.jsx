@@ -1,8 +1,8 @@
 import React from "react";
-import Article from "./Article";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Article from "./Article";
 
 /**
  * Class component ArticleSlider that renders a slider of articles.
@@ -22,11 +22,11 @@ class ArticleSlider extends React.Component {
      * Fetches the article data and processes it for rendering.
      */
     async componentDidMount() {
-        const { fetchData, processData } = this.props;
+        const {fetchData, processData} = this.props;
         const response = await fetchData();
         const articles = processData(response);
 
-        this.setState({ articles });
+        this.setState({articles});
     }
 
     /**
@@ -35,8 +35,8 @@ class ArticleSlider extends React.Component {
      * @returns {JSX.Element} - The rendered article slider component.
      */
     render() {
-        const { articles } = this.state;
-        const { blockTitle, containerClass, titleClass, sliderClass } = this.props;
+        const {articles} = this.state;
+        const {blockTitle, containerClass, titleClass, sliderClass} = this.props;
 
         // Slider settings
         const settings = {
@@ -72,7 +72,7 @@ class ArticleSlider extends React.Component {
 
         return (
             <div className={containerClass}>
-                <div className={titleClass}> { blockTitle } </div>
+                <div className={titleClass}> {blockTitle} </div>
                 <div className={sliderClass}>
                     <Slider {...settings}>
                         {articles.map((article, index) => (

@@ -1,7 +1,7 @@
 import React from 'react';
 import Article from "../../components/Article/Article";
 import Service from "../../services/Service";
-import { stripHtmlTags, extractHref } from "../../utils/dataProcessor";
+import {stripHtmlTags, extractHref} from "../../utils/dataProcessor";
 
 /**
  * Class component Arsip that displays a list of archived articles.
@@ -41,7 +41,7 @@ class Arsip extends React.Component {
             articleLink: responseTitles[index + 1].link,
         }));
 
-        this.setState({ articles });
+        this.setState({articles});
     }
 
     /**
@@ -50,7 +50,7 @@ class Arsip extends React.Component {
      * @returns {JSX.Element} - The rendered component.
      */
     render() {
-        const { articles } = this.state;
+        const {articles} = this.state;
         const blockTitle = "Arsip 2021";
 
         return (

@@ -1,15 +1,15 @@
 import React from 'react';
+import Service from "../services/Service";
+import ScrollToTop from "../components/ScrollToTop";
+import {stripHtmlTags} from "../utils/dataProcessor";
 import FeatureArticle from "../blocks/FeatureArticle";
 import TutorialDesign from "../blocks/BlockWithslider/TutorialDesign";
 import PilihanEditor from '../blocks/BlockWithslider/PilihanEditor';
 import ArtikelTerbaru from '../blocks/ArtikelTerbaru';
-import ScrollToTop from "../components/ScrollToTop";
-import { stripHtmlTags } from "../utils/dataProcessor";
 import IndustriDesign from "../blocks/BlockWithslider/IndustriDesign";
 import BlockWithSidebar from "../blocks/BlockSidebar/BlockWithSidebar";
 import GridInDesign from "../blocks/StaticBlock/GridInDesign";
 import GuideDesign from "../blocks/StaticBlock/GuideDesign";
-import Service from "../services/Service";
 
 class Blog extends React.Component {
     constructor(props) {
@@ -36,35 +36,35 @@ class Blog extends React.Component {
      * @returns {JSX.Element} The rendered component.
      */
     render() {
-        const { title } = this.state;
+        const {title} = this.state;
         return (
             <div className="blog-container">
                 <div className="blog-feature-articles-container dark">
                     <h1 className="blog-page-title title">{title}</h1>
-                    <FeatureArticle />
+                    <FeatureArticle/>
                 </div>
                 <div className="blog-tutorial-design-container whitearea">
-                    <TutorialDesign />
+                    <TutorialDesign/>
                 </div>
                 <div className="blog-grid-in-design-container dark">
-                    <GridInDesign />
+                    <GridInDesign/>
                 </div>
                 <div className="blog-pilihan-editor-container whitearea">
-                    <PilihanEditor />
+                    <PilihanEditor/>
                 </div>
                 <div className="blog-guide-design-container yellow">
-                    <GuideDesign />
+                    <GuideDesign/>
                 </div>
                 <div className="blog-artikel-terbaru-container whitearea">
-                    <ArtikelTerbaru />
+                    <ArtikelTerbaru/>
                 </div>
                 <div className="blog-industri-design-container dark">
-                    <IndustriDesign />
+                    <IndustriDesign/>
                 </div>
                 <div className="blog-block-with-sidebar-container whitearea">
-                    <BlockWithSidebar />
+                    <BlockWithSidebar/>
                 </div>
-                <ScrollToTop />
+                <ScrollToTop/>
             </div>
         );
     }

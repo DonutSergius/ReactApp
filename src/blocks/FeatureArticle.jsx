@@ -1,7 +1,7 @@
 import React from "react";
 import Article from "../components/Article/Article";
 import Service from "../services/Service";
-import { stripHtmlTags } from "../utils/dataProcessor";
+import {stripHtmlTags} from "../utils/dataProcessor";
 
 /**
  * Class component FeatureArticle that displays a featured article and other teaser articles.
@@ -59,7 +59,7 @@ class FeatureArticle extends React.Component {
      * @returns {JSX.Element} - The rendered component with a featured article and other teaser articles.
      */
     render() {
-        const { importantArticle, otherArticles } = this.state;
+        const {importantArticle, otherArticles} = this.state;
 
         return (
             <div className="feature-articles-container row">

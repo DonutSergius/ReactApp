@@ -9,7 +9,7 @@ import React from "react";
  *
  * @returns {JSX.Element} - The rendered burger icon.
  */
-const BurgerIcon = ({ onClick, isOpen }) => (
+const BurgerIcon = ({onClick, isOpen}) => (
     <div data-testid="burger-icon" className={`burger-icon ${isOpen ? 'open' : ''}`} onClick={onClick}>
         <span></span>
         <span></span>

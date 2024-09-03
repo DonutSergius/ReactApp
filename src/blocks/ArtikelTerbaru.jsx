@@ -1,7 +1,7 @@
 import React from 'react';
 import Article from "../components/Article/Article";
 import Service from "../services/Service";
-import { stripHtmlTags, extractHref } from "../utils/dataProcessor";
+import {stripHtmlTags, extractHref} from "../utils/dataProcessor";
 
 /**
  * Class component ArtikelTerbaru that renders a list of the latest articles.
@@ -55,12 +55,12 @@ class ArtikelTerbaru extends React.Component {
      * @returns {JSX.Element} - The rendered component with a list of articles.
      */
     render() {
-        const { articles } = this.state;
+        const {articles} = this.state;
         const blockTitle = "Artikel terbaru";
 
         return (
             <div className="artikel-terbaru-container">
-                <div className="artikel-terbaru-title"> { blockTitle } </div>
+                <div className="artikel-terbaru-title"> {blockTitle} </div>
                 <div className="artikel-terbaru-articles row">
                     {articles.slice(1, 7).map((article, index) => (
                         <div key={index} className="articles-container col-md-6 col-lg-4 col-sm-6">

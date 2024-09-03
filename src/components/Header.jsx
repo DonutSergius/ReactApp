@@ -1,10 +1,10 @@
 import React from "react";
-import SocialLinks from "./Links/SocialLinks";
-import { Link } from 'react-router-dom';
-import MenuLinks from "./Links/MenuLinks";
-import BurgerIcon from "./BurgerMenu/BurgerIcon";
+import {Link} from 'react-router-dom';
 import Service from "../services/Service";
+import MenuLinks from "./Links/MenuLinks";
+import SocialLinks from "./Links/SocialLinks";
 import BurgerMenu from "./BurgerMenu/BurgerMenu";
+import BurgerIcon from "./BurgerMenu/BurgerIcon";
 
 class Header extends React.Component {
     constructor(props) {
@@ -29,8 +29,7 @@ class Header extends React.Component {
     toggleBurger = () => {
         // Toggle the state of the burger menu and log the state
         this.setState(prevState => {
-            const newState = { isBurgerOpen: !prevState.isBurgerOpen };
-            console.log('Header isBurgerOpen:', newState.isBurgerOpen);
+            const newState = {isBurgerOpen: !prevState.isBurgerOpen};
             return newState;
         });
     }
@@ -41,7 +40,7 @@ class Header extends React.Component {
      * @returns {JSX.Element} - The rendered article component.
      */
     render() {
-        const { logoImage, altText, isBurgerOpen } = this.state;
+        const {logoImage, altText, isBurgerOpen} = this.state;
         return (
             <header className="header-container row">
                 <div className="header-menu_container col-lg-9 col-md-6 col-6">
@@ -51,7 +50,7 @@ class Header extends React.Component {
                         </Link>
                     </MenuLinks>
                 </div>
-                <BurgerIcon onClick={this.toggleBurger} isOpen={isBurgerOpen} />
+                <BurgerIcon onClick={this.toggleBurger} isOpen={isBurgerOpen}/>
                 <div className="header-social_container col-lg-3 col-md-6 col-6">
                     <SocialLinks isBurgerOpen={isBurgerOpen}/>
                 </div>

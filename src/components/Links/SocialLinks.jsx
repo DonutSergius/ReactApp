@@ -36,8 +36,8 @@ class SocialLinks extends React.Component {
      * @returns {JSX.Element} - The rendered article component.
      */
     render() {
-        const { socialImages } = this.state;
-        const { isBurgerOpen } = this.props;
+        const {socialImages} = this.state;
+        const {isBurgerOpen} = this.props;
         return (
             <div className={`header-social_links ${isBurgerOpen ? 'open' : ''}`}>
                 {socialImages.map((link, index) => {
@@ -50,7 +50,8 @@ class SocialLinks extends React.Component {
                             rel="noopener noreferrer"
                             className={socialClassName}
                         >
-                            <img loading="lazy" width="22" height="22" src={link.imageUrl} alt={link.field_icon_svg.meta.alt} />
+                            <img loading="lazy" width="22" height="22" src={link.imageUrl}
+                                 alt={link.field_icon_svg.meta.alt}/>
                         </a>
                     );
                 })}

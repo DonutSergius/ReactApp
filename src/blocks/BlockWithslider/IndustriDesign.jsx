@@ -1,7 +1,7 @@
 import React from 'react';
 import Service from "../../services/Service";
 import ArticleSlider from "../../components/Article/ArticleSlider";
-import { stripHtmlTags, extractHref } from "../../utils/dataProcessor";
+import {stripHtmlTags, extractHref} from "../../utils/dataProcessor";
 
 /**
  * Class component IndustriDesign that renders a slider with the latest articles.

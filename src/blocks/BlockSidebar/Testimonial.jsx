@@ -1,6 +1,6 @@
 import React from 'react';
 import Service from "../../services/Service";
-import { stripHtmlTags } from "../../utils/dataProcessor";
+import {stripHtmlTags} from "../../utils/dataProcessor";
 import Feedback from "../../components/Feedback";
 
 /**
@@ -40,7 +40,7 @@ class Testimonial extends React.Component {
             feedbackImageUrl: responseTitles[index + 1].imageUrl,
         }));
 
-        this.setState({ feedbacks });
+        this.setState({feedbacks});
     }
 
     /**
@@ -49,7 +49,7 @@ class Testimonial extends React.Component {
      * @returns {JSX.Element} - The rendered component.
      */
     render() {
-        const { feedbacks } = this.state;
+        const {feedbacks} = this.state;
         const blockTitle = "Testimonial";
 
         return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import Article from "../../components/Article/Article";
 import Service from "../../services/Service";
-import { stripHtmlTags, extractHref } from "../../utils/dataProcessor";
+import {stripHtmlTags, extractHref} from "../../utils/dataProcessor";
 
 /**
  * Class component ArtikelLainnya that displays a list of archived articles.
@@ -45,7 +45,7 @@ class ArtikelLainnya extends React.Component {
             articleBody: responseBody[index + 1],
         }));
 
-        this.setState({ articles });
+        this.setState({articles});
     }
 
     /**
@@ -54,7 +54,7 @@ class ArtikelLainnya extends React.Component {
      * @returns {JSX.Element} - The rendered component.
      */
     render() {
-        const { articles } = this.state;
+        const {articles} = this.state;
         const blockTitle = "Artikel lainnya";
 
         return (

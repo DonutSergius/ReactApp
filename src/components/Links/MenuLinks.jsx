@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 import Service from "../../services/Service";
 
 /**
@@ -10,7 +10,7 @@ import Service from "../../services/Service";
  */
 function MenuLinksWrapper(props) {
     const location = useLocation();
-    return <MenuLinks {...props} currentPath={location.pathname} />;
+    return <MenuLinks {...props} currentPath={location.pathname}/>;
 }
 
 class MenuLinks extends React.Component {
@@ -54,7 +54,7 @@ class MenuLinks extends React.Component {
      */
     renderMenuLink(link, index) {
         const path = this.getPath(link);
-        const { currentPath } = this.props;
+        const {currentPath} = this.props;
         const isActive = currentPath === path;
         const menuClassName = `menu-link menu-link-${link.title} ${isActive ? 'active' : ''}`;
         const isExternal = link.link.uri.startsWith('http');
@@ -86,8 +86,8 @@ class MenuLinks extends React.Component {
      * @returns {JSX.Element} - The rendered article component.
      */
     render() {
-        const { menuLinks } = this.state;
-        const { children, isBurgerOpen } = this.props;
+        const {menuLinks} = this.state;
+        const {children, isBurgerOpen} = this.props;
 
         return (
             <div className="header-menu_links">

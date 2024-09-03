@@ -1,6 +1,6 @@
 import React from "react";
 import Service from "../../services/Service";
-import { stripHtmlTags } from "../../utils/dataProcessor";
+import {stripHtmlTags} from "../../utils/dataProcessor";
 import StaticBlock from "../../components/StaticBlock";
 
 /**
@@ -48,7 +48,7 @@ class GridInDesign extends React.Component {
      * @returns {JSX.Element} - The rendered component with StaticBlock.
      */
     render() {
-        const { staticBlock } = this.state;
+        const {staticBlock} = this.state;
         return (
             <StaticBlock
                 blockTitle={staticBlock.blockTitle}
