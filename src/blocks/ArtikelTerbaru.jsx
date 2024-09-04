@@ -34,7 +34,7 @@ const ArtikelTerbaru = () => {
         };
 
         fetchArticles();
-    }, []); // Empty dependency array ensures this runs once on mount
+    }, []);
 
     const blockTitle = "Artikel terbaru";
 

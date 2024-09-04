@@ -34,7 +34,7 @@ const GridInDesign = () => {
         };
 
         fetchData();
-    }, []); // Empty dependency array ensures this runs once on mount
+    }, []);
 
     return (
         <StaticBlock

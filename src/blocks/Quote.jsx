@@ -32,7 +32,7 @@ const Quote = () => {
      */
     useEffect(() => {
         fetchQuote();
-    }, []); // Empty dependency array ensures this runs once on mount
+    }, []);
 
     /**
      * Handles the click event to fetch and display a new quote.

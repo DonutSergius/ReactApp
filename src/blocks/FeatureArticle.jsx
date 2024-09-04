@@ -39,7 +39,7 @@ const FeatureArticle = () => {
         };
 
         fetchArticles();
-    }, []); // Empty dependency array ensures this runs once on mount
+    }, []);
 
     return (
         <div className="feature-articles-container row">

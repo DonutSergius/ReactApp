@@ -35,19 +35,17 @@ header {
       opacity: 0.5;
 
       &:hover {
-        color: #ffffff;
         opacity: 1;
       }
 
       &.active {
-        color: #ffffff;
         opacity: 1;
       }
     }
   }
 
   .header-social_links {
-    padding: 36px 0px 0px 0px;
+    padding: 36px 0 0 0;
     text-align: right;
 
     .social-link {

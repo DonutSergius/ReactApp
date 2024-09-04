@@ -725,15 +725,13 @@ header .header-menu_links a {
   opacity: 0.5;
 }
 header .header-menu_links a:hover {
-  color: #ffffff;
   opacity: 1;
 }
 header .header-menu_links a.active {
-  color: #ffffff;
   opacity: 1;
 }
 header .header-social_links {
-  padding: 36px 0px 0px 0px;
+  padding: 36px 0 0 0;
   text-align: right;
 }
 header .header-social_links .social-link {

@@ -1,6 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+/**
+ * A functional component that displays a static block with a title, image, body text, and a link.
+ *
+ * @param {Object} props - The component's props.
+ * @param {string} props.blockTitle - The title of the block.
+ * @param {string} props.blockImageUrl - The URL of the block image.
+ * @param {string} props.blockImageAlt - The alt text for the image.
+ * @param {string} props.blockBody - The body text of the block.
+ * @param {string} props.blockLink - The text for the "Read More" link.
+ * @param {string} props.blockLinkUrl - The URL for the "Read More" link.
+ * @returns {JSX.Element} The rendered component.
+ */
 const StaticBlock = React.memo(({
                                     blockTitle,
                                     blockImageUrl,

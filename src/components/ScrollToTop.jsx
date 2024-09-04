@@ -1,5 +1,11 @@
 import React, {useState, useEffect} from 'react';
 
+/**
+ * A component that shows a "Back to Top" button when the user scrolls down.
+ * Clicking the button smoothly scrolls the page back to the top.
+ *
+ * @returns {JSX.Element} The rendered component.
+ */
 const ScrollToTopDiv = () => {
     // State to control the visibility of the scroll-to-top button
     const [isVisible, setIsVisible] = useState(false);
@@ -24,7 +30,6 @@ const ScrollToTopDiv = () => {
     // Effect to add and remove scroll event listener
     useEffect(() => {
         window.addEventListener('scroll', toggleVisibility);
-        // Cleanup function to remove event listener
         return () => {
             window.removeEventListener('scroll', toggleVisibility);
         };

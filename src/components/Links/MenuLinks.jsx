@@ -30,7 +30,7 @@ const MenuLinks = React.memo(({ currentPath, children, isBurgerOpen }) => {
         };
 
         fetchMenuLinks();
-    }, []); // Empty dependency array ensures this effect runs only once
+    }, []);
 
     /**
      * Determines the path for a link based on its title or URI.

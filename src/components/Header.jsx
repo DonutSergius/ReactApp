@@ -20,7 +20,7 @@ const Header = () => {
         } catch (error) {
             console.error("Error fetching logo data:", error);
         }
-    }, []); // Empty dependency array means this effect runs once on mount
+    }, []);
 
     useEffect(() => {
         fetchLogo();

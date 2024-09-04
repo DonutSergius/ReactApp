@@ -29,7 +29,7 @@ function BurgerMenu({currentPath, isBurgerOpen}) {
         }
 
         fetchLinks();
-    }, []); // Empty dependency array ensures this effect runs only once on mount
+    }, []);
 
     /**
      * Determines the path for a link based on its title or URI.
