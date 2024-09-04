@@ -1,8 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Service from "../../services/Service";
 
-const SocialLinks = ({ isBurgerOpen }) => {
-    const [socialLinks, setSocialLinks] = useState([]);
+/**
+ * Functional component SocialLinks that renders social links with images.
+ *
+ * @param {Object} props - The component props.
+ * @returns {JSX.Element} - The rendered social links component.
+ */
+const SocialLinks = React.memo(({ isBurgerOpen }) => {
     const [socialImages, setSocialImages] = useState([]);
 
     useEffect(() => {
@@ -21,7 +26,6 @@ const SocialLinks = ({ isBurgerOpen }) => {
                     })
                 );
 
-                setSocialLinks(socialLinksData);
                 setSocialImages(socialImagesData);
             } catch (error) {
                 console.error("Error fetching social links and images:", error);
@@ -29,32 +33,34 @@ const SocialLinks = ({ isBurgerOpen }) => {
         };
 
         fetchData();
-    }, []); // Empty dependency array means this effect runs once on mount
+    }, []);
+
+    const renderSocialLink = useCallback((link, index) => {
+        const socialClassName = `social-link social-link-${link.field_icon_svg.meta.alt}`;
+        return (
+            <a
+                key={index}
+                href={link.field_link.uri}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={socialClassName}
+            >
+                <img
+                    loading="lazy"
+                    width="22"
+                    height="22"
+                    src={link.imageUrl}
+                    alt={link.field_icon_svg.meta.alt}
+                />
+            </a>
+        );
+    }, []);
 
     return (
         <div className={`header-social_links ${isBurgerOpen ? 'open' : ''}`}>
-            {socialImages.map((link, index) => {
-                const socialClassName = `social-link social-link-${link.field_icon_svg.meta.alt}`;
-                return (
-                    <a
-                        key={index}
-                        href={link.field_link.uri}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={socialClassName}
-                    >
-                        <img
-                            loading="lazy"
-                            width="22"
-                            height="22"
-                            src={link.imageUrl}
-                            alt={link.field_icon_svg.meta.alt}
-                        />
-                    </a>
-                );
-            })}
+            {socialImages.map((link, index) => renderSocialLink(link, index))}
         </div>
     );
-};
+});
 
 export default SocialLinks;

@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const StaticBlock = ({
-                         blockTitle,
-                         blockImageUrl,
-                         blockImageAlt,
-                         blockBody,
-                         blockLink,
-                         blockLinkUrl,
-                     }) => (
+const StaticBlock = React.memo(({
+                                    blockTitle,
+                                    blockImageUrl,
+                                    blockImageAlt,
+                                    blockBody,
+                                    blockLink,
+                                    blockLinkUrl,
+                                }) => (
     <div className="static-block-container row">
         <div className="static-block-data col-lg-6 col-md-12">
             <h2 className="static-block-data_title">
@@ -36,7 +36,7 @@ const StaticBlock = ({
             />
         </div>
     </div>
-);
+));
 
 // PropTypes validation
 StaticBlock.propTypes = {

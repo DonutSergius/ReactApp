@@ -1,6 +1,17 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
-const Feedback = ({ imageUrl, imageAlt, feedbackRemember, feedbackBody }) => {
+/**
+ * Functional component Feedback that displays user feedback with an image.
+ *
+ * @param {Object} props - The component props.
+ * @param {string} props.imageUrl - URL of the feedback image.
+ * @param {string} props.imageAlt - Alt text for the feedback image.
+ * @param {string} props.feedbackRemember - Text to display as "remember".
+ * @param {string} props.feedbackBody - Main body text of the feedback.
+ * @returns {JSX.Element} - The rendered feedback component.
+ */
+const Feedback = React.memo(({imageUrl, imageAlt, feedbackRemember, feedbackBody}) => {
     return (
         <div className="feedback-conatiner">
             <div className="feedback row">
@@ -20,6 +31,13 @@ const Feedback = ({ imageUrl, imageAlt, feedbackRemember, feedbackBody }) => {
             </div>
         </div>
     );
+});
+
+Feedback.propTypes = {
+    imageUrl: PropTypes.string.isRequired,
+    imageAlt: PropTypes.string.isRequired,
+    feedbackRemember: PropTypes.string.isRequired,
+    feedbackBody: PropTypes.string.isRequired,
 };
 
 export default Feedback;

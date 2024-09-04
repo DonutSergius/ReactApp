@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Service from "../../services/Service";
 
@@ -8,10 +8,10 @@ import Service from "../../services/Service";
  * @param {Object} props - The component props.
  * @returns {JSX.Element} - The rendered MenuLinks component with the current path.
  */
-function MenuLinksWrapper(props) {
+const MenuLinksWrapper = React.memo((props) => {
     const location = useLocation();
     return <MenuLinks {...props} currentPath={location.pathname} />;
-}
+});
 
 /**
  * Functional component MenuLinks that renders menu links with active state management.
@@ -19,7 +19,7 @@ function MenuLinksWrapper(props) {
  * @param {Object} props - The component props.
  * @returns {JSX.Element} - The rendered menu links component.
  */
-function MenuLinks({ currentPath, children, isBurgerOpen }) {
+const MenuLinks = React.memo(({ currentPath, children, isBurgerOpen }) => {
     const [menuLinks, setMenuLinks] = useState([]);
 
     useEffect(() => {
@@ -38,13 +38,13 @@ function MenuLinks({ currentPath, children, isBurgerOpen }) {
      * @param {Object} link - The link object.
      * @returns {string} - The determined path.
      */
-    const getPath = (link) => {
+    const getPath = useCallback((link) => {
         if (link.title === "Lain nya") {
             return "/lain_nya";
         } else {
             return link.link.uri.replace('internal:', '');
         }
-    };
+    }, []);
 
     /**
      * Renders a menu link as either an internal Link or an external anchor tag.
@@ -53,7 +53,7 @@ function MenuLinks({ currentPath, children, isBurgerOpen }) {
      * @param {number} index - The index of the link in the array.
      * @returns {JSX.Element} - The rendered menu link.
      */
-    const renderMenuLink = (link, index) => {
+    const renderMenuLink = useCallback((link, index) => {
         const path = getPath(link);
         const isActive = currentPath === path;
         const menuClassName = `menu-link menu-link-${link.title} ${isActive ? 'active' : ''}`;
@@ -78,7 +78,7 @@ function MenuLinks({ currentPath, children, isBurgerOpen }) {
                 </Link>
             );
         }
-    };
+    }, [currentPath, getPath]);
 
     return (
         <div className="header-menu_links">
@@ -88,6 +88,6 @@ function MenuLinks({ currentPath, children, isBurgerOpen }) {
             </div>
         </div>
     );
-}
+});
 
 export default MenuLinksWrapper;

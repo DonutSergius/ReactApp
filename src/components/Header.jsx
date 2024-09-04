@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Link } from 'react-router-dom';
 import Service from "../services/Service";
 import MenuLinks from "./Links/MenuLinks";
@@ -11,20 +11,20 @@ const Header = () => {
     const [altText, setAltText] = useState('');
     const [isBurgerOpen, setIsBurgerOpen] = useState(false);
 
-    useEffect(() => {
-        const fetchLogo = async () => {
-            try {
-                const logoData = await Service.getLogo();
-                const logoImageUrl = await Service.getImage(logoData.data.field_image.uri.url);
-                setLogoImage(logoImageUrl);
-                setAltText(logoData.data.field_image.meta.alt);
-            } catch (error) {
-                console.error("Error fetching logo data:", error);
-            }
-        };
-
-        fetchLogo();
+    const fetchLogo = useCallback(async () => {
+        try {
+            const logoData = await Service.getLogo();
+            const logoImageUrl = await Service.getImage(logoData.data.field_image.uri.url);
+            setLogoImage(logoImageUrl);
+            setAltText(logoData.data.field_image.meta.alt);
+        } catch (error) {
+            console.error("Error fetching logo data:", error);
+        }
     }, []); // Empty dependency array means this effect runs once on mount
+
+    useEffect(() => {
+        fetchLogo();
+    }, [fetchLogo]);
 
     const toggleBurger = () => {
         setIsBurgerOpen(prevState => !prevState);
@@ -55,4 +55,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default React.memo(Header);

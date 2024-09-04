@@ -7,16 +7,16 @@ import PropTypes from 'prop-types';
  * @param {Object} props - The component props.
  * @returns {JSX.Element} - The rendered article component.
  */
-function Article({
-                     articleLink,
-                     imageUrl,
-                     imageAlt,
-                     articleDate,
-                     articleTitle,
-                     articleBody,
-                     articleImageClass,
-                     articleDataClass,
-                 }) {
+const Article = React.memo(({
+                                articleLink,
+                                imageUrl,
+                                imageAlt,
+                                articleDate,
+                                articleTitle,
+                                articleBody,
+                                articleImageClass,
+                                articleDataClass,
+                            }) => {
     return (
         <div className="article-conatiner">
             <a href={articleLink}>
@@ -41,7 +41,7 @@ function Article({
             </a>
         </div>
     );
-}
+});
 
 Article.propTypes = {
     articleLink: PropTypes.string,
@@ -55,8 +55,9 @@ Article.propTypes = {
 };
 
 Article.defaultProps = {
+    articleLink: '#',
     imageUrl: '',
-    imageAlt: '',
+    imageAlt: 'Image',
     articleImageClass: '',
     articleDataClass: '',
 };

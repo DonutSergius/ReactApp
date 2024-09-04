@@ -11,14 +11,14 @@ import Article from "./Article";
  * @param {Object} props - The component props.
  * @returns {JSX.Element} - The rendered article slider component.
  */
-function ArticleSlider({
-                           fetchData,
-                           processData,
-                           blockTitle,
-                           containerClass,
-                           titleClass,
-                           sliderClass
-                       }) {
+const ArticleSlider = React.memo(({
+                                      fetchData,
+                                      processData,
+                                      blockTitle,
+                                      containerClass,
+                                      titleClass,
+                                      sliderClass
+                                  }) => {
     const [articles, setArticles] = useState([]);
 
     useEffect(() => {
@@ -85,7 +85,7 @@ function ArticleSlider({
             </div>
         </div>
     );
-}
+});
 
 ArticleSlider.propTypes = {
     fetchData: PropTypes.func.isRequired,
@@ -101,6 +101,5 @@ ArticleSlider.defaultProps = {
     titleClass: '',
     sliderClass: '',
 };
-
 
 export default ArticleSlider;
