@@ -2,26 +2,12 @@
 @import "mixin";
 
 .dark {
-  .industri-design-container {
-    .article-conatiner {
-      .article {
-        padding: 0 $mediumPadding;
-      }
-    }
-  }
-
   .article-conatiner {
     .article {
       &-data {
+        &_title,
+        &_body,
         &_date {
-          color: $whiteTextColor;
-        }
-
-        &_body {
-          color: $whiteTextColor;
-        }
-
-        &_title {
           color: $whiteTextColor;
         }
       }
@@ -32,18 +18,10 @@
 .whitearea {
   .article-conatiner {
     .article {
-      padding: 0 $mediumPadding;
-
       &-data {
+        &_title,
+        &_body,
         &_date {
-          color: $blackTextColor;
-        }
-
-        &_body {
-          color: $blackTextColor;
-        }
-
-        &_title {
           color: $blackTextColor;
         }
       }
@@ -53,6 +31,7 @@
 
 .article-conatiner {
   .article {
+    padding: 0 $mediumPadding;
     &-image {
       img {
         width: 100%;

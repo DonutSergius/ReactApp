@@ -34,7 +34,7 @@ const Blog = () => {
         };
 
         fetchTitle();
-    }, []); // Empty dependency array ensures this runs once on mount
+    }, []);
 
     return (
         <div className="blog-container">

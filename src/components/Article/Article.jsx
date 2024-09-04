@@ -34,7 +34,7 @@ const Article = React.memo(({
                     )}
                     <div className={`article-data ${articleDataClass}`}>
                         <div className="article-data_date">{articleDate}</div>
-                        <div className="article-data_title">{articleTitle}</div>
+                        <h2 className="article-data_title">{articleTitle}</h2>
                         <div className="article-data_body">{articleBody}</div>
                     </div>
                 </div>

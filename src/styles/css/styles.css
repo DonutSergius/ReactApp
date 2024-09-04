@@ -61,32 +61,17 @@
     padding: 20px 0 60px;
   }
 }
-.dark .industri-design-container .article-conatiner .article {
-  padding: 0 20px;
-}
-.dark .article-conatiner .article-data_date {
-  color: rgb(255, 255, 255);
-}
-.dark .article-conatiner .article-data_body {
-  color: rgb(255, 255, 255);
-}
-.dark .article-conatiner .article-data_title {
+.dark .article-conatiner .article-data_title, .dark .article-conatiner .article-data_body, .dark .article-conatiner .article-data_date {
   color: rgb(255, 255, 255);
 }
 
-.whitearea .article-conatiner .article {
-  padding: 0 20px;
-}
-.whitearea .article-conatiner .article-data_date {
-  color: rgb(0, 0, 0);
-}
-.whitearea .article-conatiner .article-data_body {
-  color: rgb(0, 0, 0);
-}
-.whitearea .article-conatiner .article-data_title {
+.whitearea .article-conatiner .article-data_title, .whitearea .article-conatiner .article-data_body, .whitearea .article-conatiner .article-data_date {
   color: rgb(0, 0, 0);
 }
 
+.article-conatiner .article {
+  padding: 0 20px;
+}
 .article-conatiner .article-image img {
   width: 100%;
   height: auto;
@@ -160,6 +145,9 @@
 }
 .artikel-lainnya-container .artikel-lainnya-articles .article-image img {
   object-fit: cover;
+  height: 100%;
+}
+.artikel-lainnya-container .artikel-lainnya-articles .article-image img {
   max-height: 214px;
 }
 .artikel-lainnya-container .artikel-lainnya-articles .article-data_date {
@@ -240,8 +228,10 @@
 }
 .artikel-terbaru-container .artikel-terbaru-articles .article-conatiner .article-image img {
   object-fit: cover;
-  width: 100%;
   height: 100%;
+}
+.artikel-terbaru-container .artikel-terbaru-articles .article-conatiner .article-image img {
+  width: 100%;
 }
 .yellow .static-block-container {
   margin-top: 40px;
@@ -377,10 +367,6 @@
     margin-bottom: 45px;
     font-size: 1.5vw;
   }
-  .static-block-container .static-block-data_read-more a {
-    padding: 15px 75px;
-    font-size: 1.5vw;
-  }
   .static-block-container .static-block-image {
     height: 500px;
   }
@@ -394,19 +380,13 @@
   }
   .static-block-container .static-block-data_title {
     margin-bottom: 20px;
-    font-size: 3.5vw;
     line-height: 40px;
   }
   .static-block-container .static-block-data_body {
     margin-bottom: 25px;
-    font-size: 1.5vw;
   }
   .static-block-container .static-block-data_read-more {
     height: 40px;
-  }
-  .static-block-container .static-block-data_read-more a {
-    padding: 15px 75px;
-    font-size: 1.5vw;
   }
   .static-block-container .static-block-image {
     height: 400px;
@@ -506,7 +486,8 @@ a {
   text-decoration: none;
 }
 
-h1 {
+h1, h2, h3, h4 {
+  padding: 0;
   margin: 0;
 }
 

@@ -158,12 +158,6 @@
                 margin-bottom: 45px;
                 font-size: 1.5vw;
             }
-            &_read-more {
-                a {
-                    padding: 15px 75px;
-                    font-size: 1.5vw;
-                }
-            }
         }
         .static-block-image {
             height: 500px;
@@ -179,19 +173,13 @@
             height: max-content;    
             &_title{
                 margin-bottom: $smallMargin;
-                font-size: 3.5vw;
                 line-height: 40px;
             }
             &_body {
                 margin-bottom: 25px;
-                font-size: 1.5vw;
             }
             &_read-more {
                 height: 40px;
-                a {
-                    padding: 15px 75px;
-                    font-size: 1.5vw;
-                }
             }
         }
         .static-block-image {

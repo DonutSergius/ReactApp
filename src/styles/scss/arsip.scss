@@ -2,7 +2,7 @@
 @import "mixin";
 
 .arsip-container {
-  padding-left: 20px;
+  padding-left: $mediumPadding;
   .arsip {
     &-title {
       @include teaserBlockTitle;
@@ -11,7 +11,7 @@
     &-articles {
       .article-conatiner {
         width: inherit;
-        padding-left: 20px;
+        padding-left: $mediumPadding;
 
         &:first-child {
           .article {
@@ -32,8 +32,8 @@
 
         .article {
           width: inherit;
-          border-bottom: 1px solid #e5e5e5;
-          border-left: 1px solid #e5e5e5;
+          border-bottom: 1px solid $grayBorderColor;
+          border-left: 1px solid $grayBorderColor;
           text-align: left;
           padding: 24px 0 24px 24px;
           margin-top: 0;
@@ -46,11 +46,9 @@
             }
 
             &_title {
-              font-weight: 400;
-              font-size: 20px;
-              line-height: 30px;
+              @include textFormat(20px, 400, 30px);
               letter-spacing: 0.4px;
-              color: #121212;
+              color: $blackBackground;
             }
 
             &_body {
@@ -68,8 +66,9 @@
     padding: 0;
   }
 }
+
 @media (max-width: $phoneWidth) {
   .arsip-container {
-    padding: 20px 0 60px;
+    padding: $mediumPadding 0 60px;
   }
 }

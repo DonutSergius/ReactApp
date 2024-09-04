@@ -17,12 +17,10 @@
         }
 
         &-image {
-          aspect-ratio: 16/9;
+          @include teaserObjectFitImage;
 
           img {
-            object-fit: cover;
             width: 100%;
-            height: 100%;
           }
         }
       }

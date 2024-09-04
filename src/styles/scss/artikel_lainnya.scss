@@ -21,10 +21,8 @@
         &-image {
           margin-top: $mediumMargin;
           order: 2;
-          aspect-ratio: 16/9;
-
+          @include teaserObjectFitImage;
           img {
-            object-fit: cover;
             max-height: 214px;
           }
         }

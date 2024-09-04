@@ -30,8 +30,8 @@
         .feedback {
           display: flex;
           width: inherit;
-          border-bottom: 1px solid #e5e5e5;
-          border-left: 1px solid #e5e5e5;
+          border-bottom: 1px solid $grayBorderColor;
+          border-left: 1px solid $grayBorderColor;
           text-align: left;
           padding: 24px 0 24px 20px;
           margin-top: 0;
