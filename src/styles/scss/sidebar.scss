@@ -11,7 +11,7 @@
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: $tableWidth) {
   .block-width-sidebar-container {
     .right-container {
       img {
@@ -21,7 +21,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: $phoneWidth) {
   .block-width-sidebar-container {
     .right-container {
       width: 100vw;

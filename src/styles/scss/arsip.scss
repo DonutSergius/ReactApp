@@ -63,12 +63,12 @@
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: $tableWidth) {
   .arsip-container {
     padding: 0;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: $phoneWidth) {
   .arsip-container {
     padding: 20px 0 60px;
   }

@@ -86,7 +86,7 @@
 }
 
 
-@media (max-width: 1680px) {
+@media (max-width: $bigDesktopWidth) {
   .article-conatiner {
     .article {
       &-data {
@@ -107,7 +107,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: $phoneWidth) {
   .article-conatiner {
     .article {
       &-data {

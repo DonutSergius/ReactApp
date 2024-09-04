@@ -2,7 +2,7 @@ import React from "react";
 
 const Feedback = ({ imageUrl, imageAlt, feedbackRemember, feedbackBody }) => {
     return (
-        <div className="feedback-container">
+        <div className="feedback-conatiner">
             <div className="feedback row">
                 <div className="feedback-image">
                     <img

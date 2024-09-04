@@ -83,7 +83,7 @@
   }
 }
 
-@media (max-width: 1679px) {
+@media (max-width: $bigDesktopWidth) {
   .feature-articles-container {
     .articles {
       .article-image {
@@ -131,7 +131,7 @@
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: $tableWidth) {
   .feature-articles-container {
     .important_teaser {
       .article-conatiner {
@@ -146,7 +146,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: $phoneWidth) {
   .feature-articles-container {
     .important_teaser {
       margin-bottom: $smallMargin;

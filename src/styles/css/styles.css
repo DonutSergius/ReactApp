@@ -625,7 +625,7 @@ body {
   font-weight: 200;
 }
 
-@media (max-width: 1679px) {
+@media (max-width: 1680px) {
   .feature-articles-container .articles .article-image img {
     width: 100%;
   }
@@ -980,13 +980,6 @@ header .header-social_links .social-link img:hover {
   }
   .quote-body {
     font-size: 30px;
-  }
-  .quote-author {
-    font-size: 18px;
-  }
-  .quote-button {
-    margin-top: 20px;
-    padding: 10px 20px;
   }
 }
 .scroll_button {

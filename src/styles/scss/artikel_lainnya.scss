@@ -38,7 +38,7 @@
   }
 }
 
-@media (max-width: 1680px) {
+@media (max-width: $bigDesktopWidth) {
   .artikel-lainnya-container {
     .artikel-lainnya {
       &-articles {
@@ -54,7 +54,7 @@
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: $tableWidth) {
   .artikel-lainnya-container {
     margin-bottom: 36px;
     .artikel-lainnya {
@@ -71,7 +71,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: $phoneWidth) {
   .artikel-lainnya-container {
     .artikel-lainnya {
       &-title {
