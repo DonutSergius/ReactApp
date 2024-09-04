@@ -1,4 +1,5 @@
 @import "variables";
+@import "mixin";
 
 .container {
   margin: auto;
@@ -26,9 +27,7 @@ header {
       margin-right: $mediumMargin;
       padding-top: 9px;
       padding-bottom: 9px;
-      font-size: 12px;
-      line-height: 20px;
-      font-weight: 500;
+      @include textFormat(12px, 500, 20px);
       letter-spacing: 1px;
       text-transform: uppercase;
       text-decoration: none;

@@ -41,8 +41,7 @@
 
     &-data {
       &_date {
-        font-size: 14px;
-        line-height: 14px;
+        @include textFormat(14px, 400, 14px);
         letter-spacing: 0.2px;
         padding: 16px 0 $smallPadding;
         opacity: 0.5;
@@ -55,10 +54,8 @@
       }
 
       &_title {
-        font-size: 25px;
-        line-height: 35px;
+        @include textFormat(25px, 600, 35px);
         letter-spacing: 0.3px;
-        font-weight: 600;
       }
     }
   }
@@ -70,16 +67,13 @@
     .article {
       &-data {
         &_date {
-          font-size: 11px;
-          line-height: 11px;
+          @include textFormat(11px, 400, 11px);
         }
         &_title {
-          font-size: 24px;
-          line-height: 32px;
+          @include textFormat(24px, 600, 32px);
         }
         &_body {
-          font-size: 15px;
-          line-height: 23px;
+          @include textFormat(15px, 400, 23px);
         }
       }
     }
@@ -91,8 +85,7 @@
     .article {
       &-data {
         &_title {
-          font-size: 18px;
-          line-height: 24px;
+          @include textFormat(18px, 600, 24px);
         }
       }
     }

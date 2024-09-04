@@ -1,12 +1,11 @@
 @import "variables";
+@import "mixin";
 
 .title {
   text-transform: uppercase;
-  font-weight: 700;
+  @include textFormat(275px, 700, 210px);
   text-align: center;
   margin: $smallMargin auto $bigMargin auto;
-  line-height: 210px;
-  font-size: 275px;
   padding: 40px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);

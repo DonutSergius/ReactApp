@@ -57,21 +57,17 @@
             }
 
             &_remember {
-              font-size: 13px;
-              line-height: 22px;
-              font-weight: 400;
+              @include textFormat(13px, 400, 22px);
               letter-spacing: 0.5px;
               margin-top: 6px;
-              color: #121212;
+              color: $blackBackground;
             }
 
             &_body {
               opacity: 1;
               padding: 0;
-              font-size: 13px;
-              line-height: 21px;
+              @include textFormat(13px, 300, 21px);
               color: #404852;
-              font-weight: 300;
               letter-spacing: 0.5px;
             }
           }

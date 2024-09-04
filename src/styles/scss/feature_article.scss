@@ -1,4 +1,5 @@
 @import "variables";
+@import "mixin";
 
 .feature-articles-container {
   .important_teaser {
@@ -23,13 +24,11 @@
         &_date {
           letter-spacing: 0.5px;
           padding: 4px 0 $smallPadding;
-          font-size: 14px;
-          line-height: 14px;
+          @include textFormat(14px, 400, 14px);
         }
 
         &_title {
-          font-size: 25px;
-          line-height: 35px;
+          @include textFormat(25px, 400, 35px);
         }
       }
     }
@@ -53,29 +52,23 @@
 
         &-data {
           &_date {
-            font-weight: normal;
-            font-size: 14px;
-            line-height: 14px;
+            @include textFormat(14px, normal, 14px);
             color: $whiteTextColor;
             opacity: 0.3;
             padding: $mediumPadding 0 $smallPadding;
           }
 
           &_title {
-            font-weight: 600;
-            font-size: 32px;
-            line-height: 42px;
+            @include textFormat(32px, 600, 42px);
             letter-spacing: 0;
             color: $whiteTextColor;
             margin-bottom: 16px;
           }
 
           &_body {
-            font-size: 18px;
-            line-height: 28px;
+            @include textFormat(18px, 200, 28px);
             color: $whiteTextColor;
             opacity: 0.5;
-            font-weight: 200;
           }
         }
       }
