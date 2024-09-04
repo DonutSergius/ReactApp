@@ -8,8 +8,8 @@ import Header from "./components/Header";
 function App() {
     return (
         <Router>
-            <div className="main-container container">
-                <div className="main-header-container dark">
+            <div className="container">
+                <div className="header-container dark">
                     <Header/>
                 </div>
                 <Routes>

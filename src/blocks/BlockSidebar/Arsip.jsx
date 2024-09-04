@@ -1,75 +1,55 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Article from "../../components/Article/Article";
 import Service from "../../services/Service";
-import {stripHtmlTags, extractHref} from "../../utils/dataProcessor";
+import { stripHtmlTags, extractHref } from "../../utils/dataProcessor";
 
 /**
- * Class component Arsip that displays a list of archived articles.
+ * Functional component Arsip that displays a list of archived articles.
  *
- * @extends React.Component
+ * @returns {JSX.Element} - The rendered component.
  */
-class Arsip extends React.Component {
+const Arsip = () => {
+    const [articles, setArticles] = useState([]);
 
-    /**
-     * Initializes the component and sets the initial state.
-     *
-     * @param {Object} props - The component's props.
-     */
-    constructor(props) {
-        super(props);
-        this.state = {
-            articles: [],
+    useEffect(() => {
+        const fetchArchives = async () => {
+            const response = await Service.getArchives();
+            const responseTitles = response.map(item => ({
+                title: stripHtmlTags(item.title_1),
+                link: extractHref(item.title_1)
+            }));
+
+            const trimmedResponse = response.slice(1);
+
+            const articlesData = trimmedResponse.map((item, index) => ({
+                articleDate: item.field_date,
+                articleTitle: responseTitles[index + 1].title,
+                articleLink: responseTitles[index + 1].link,
+            }));
+
+            setArticles(articlesData);
         };
-    }
 
-    /**
-     * Called immediately after the component is mounted.
-     * Fetches the archive data and updates the component state.
-     */
-    async componentDidMount() {
-        const response = await Service.getArchives();
-        const responseTitles = response.map(item => ({
-            title: stripHtmlTags(item.title_1),
-            link: extractHref(item.title_1)
-        }));
+        fetchArchives();
+    }, []);
 
-        const trimmedResponse = response.slice(1);
+    const blockTitle = "Arsip 2021";
 
-        const articles = trimmedResponse.map((item, index) => ({
-            articleDate: item.field_date,
-            articleTitle: responseTitles[index + 1].title,
-            articleLink: responseTitles[index + 1].link,
-        }));
-
-        this.setState({articles});
-    }
-
-    /**
-     * Renders the component.
-     *
-     * @returns {JSX.Element} - The rendered component.
-     */
-    render() {
-        const {articles} = this.state;
-        const blockTitle = "Arsip 2021";
-
-        return (
-            <div className="arsip-container row">
-                <div className="arsip-title"> {blockTitle} </div>
-                <div className="arsip-articles">
-                    {articles.map((article, index) => (
-                        <Article
-                            key={index}
-                            articleLink={article.articleLink}
-                            articleDate={article.articleDate}
-                            articleTitle={article.articleTitle}
-
-                        />
-                    ))}
-                </div>
+    return (
+        <div className="arsip-container row">
+            <div className="arsip-title">{blockTitle}</div>
+            <div className="arsip-articles">
+                {articles.map((article, index) => (
+                    <Article
+                        key={index}
+                        articleLink={article.articleLink}
+                        articleDate={article.articleDate}
+                        articleTitle={article.articleTitle}
+                    />
+                ))}
             </div>
-        );
-    }
-}
+        </div>
+    );
+};
 
 export default Arsip;

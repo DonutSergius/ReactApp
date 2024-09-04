@@ -10,7 +10,12 @@ import React from "react";
  * @returns {JSX.Element} - The rendered burger icon.
  */
 const BurgerIcon = ({onClick, isOpen}) => (
-    <div data-testid="burger-icon" className={`burger-icon ${isOpen ? 'open' : ''}`} onClick={onClick}>
+    <div
+        data-testid="burger-icon"
+        className={`burger-icon ${isOpen ? 'open' : ''}`}
+        onClick={onClick}
+        aria-label={isOpen ? 'Close menu' : 'Open menu'}
+    >
         <span></span>
         <span></span>
         <span></span>

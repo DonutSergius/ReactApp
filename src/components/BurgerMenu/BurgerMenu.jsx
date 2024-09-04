@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {Link, useLocation} from "react-router-dom";
 import Service from "../../services/Service";
 
@@ -13,26 +13,37 @@ function BurgerMenuWrapper(props) {
     return <BurgerMenu {...props} currentPath={location.pathname}/>;
 }
 
-class BurgerMenu extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            socialLinks: [],
-            menuLinks: [],
-        };
-    }
+function BurgerMenu({currentPath, isBurgerOpen}) {
+    const [socialLinks, setSocialLinks] = useState([]);
+    const [menuLinks, setMenuLinks] = useState([]);
 
     /**
      * Fetches social and menu links when the component mounts.
      */
-    async componentDidMount() {
-        const socialLinks = await Service.getSocialLink();
-        const menuLinks = await Service.getMenuLink();
-        this.setState({
-            socialLinks: socialLinks.data.field_social_links,
-            menuLinks: menuLinks.data,
-        });
-    }
+    useEffect(() => {
+        async function fetchLinks() {
+            const socialLinksResponse = await Service.getSocialLink();
+            const menuLinksResponse = await Service.getMenuLink();
+            setSocialLinks(socialLinksResponse.data.field_social_links);
+            setMenuLinks(menuLinksResponse.data);
+        }
+
+        fetchLinks();
+    }, []); // Empty dependency array ensures this effect runs only once on mount
+
+    /**
+     * Determines the path for a link based on its title or URI.
+     *
+     * @param {Object} link - The link object.
+     * @returns {string} - The determined path.
+     */
+    const getPath = (link) => {
+        if (link.title === "Lain nya") {
+            return "/lain_nya";
+        } else {
+            return link.link.uri.replace('internal:', '');
+        }
+    };
 
     /**
      * Renders a menu link as either an internal Link or an external anchor tag.
@@ -41,9 +52,8 @@ class BurgerMenu extends React.Component {
      * @param {number} index - The index of the link in the array.
      * @returns {JSX.Element} - The rendered menu link.
      */
-    renderMenuLink(link, index) {
-        const path = this.getPath(link);
-        const {currentPath} = this.props;
+    const renderMenuLink = (link, index) => {
+        const path = getPath(link);
         const isActive = currentPath === path;
         const menuClassName = `menu-link menu-link-${link.title} ${isActive ? 'active' : ''}`;
         const isExternal = link.link.uri.startsWith('http');
@@ -67,53 +77,29 @@ class BurgerMenu extends React.Component {
                 </Link>
             );
         }
-    }
+    };
 
-    /**
-     * Determines the path for a link based on its title or URI.
-     *
-     * @param {Object} link - The link object.
-     * @returns {string} - The determined path.
-     */
-    getPath(link) {
-        if (link.title === "Lain nya") {
-            return "/lain_nya";
-        } else {
-            return link.link.uri.replace('internal:', '');
-        }
-    }
-
-    /**
-     * Renders the component.
-     *
-     * @returns {JSX.Element} - The rendered article component.
-     */
-    render() {
-        const {menuLinks, socialLinks} = this.state;
-        const {isBurgerOpen} = this.props;
-
-        return (
-            <div className={`header-burger-menu ${isBurgerOpen ? 'open' : ''}`}>
-                <div className="burger-menu-links">
-                    {menuLinks.map((link, index) => this.renderMenuLink(link, index))}
-                    {socialLinks.map((link, index) => {
-                        const socialClassName = `social-link social-link-${link.field_icon_svg.meta.alt}`;
-                        return (
-                            <a
-                                key={index}
-                                href={link.field_link.uri}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={socialClassName}
-                            >
-                                {link.field_icon_svg.meta.alt}
-                            </a>
-                        );
-                    })}
-                </div>
+    return (
+        <div className={`header-burger-menu ${isBurgerOpen ? 'open' : ''}`}>
+            <div className="burger-menu-links">
+                {menuLinks.map((link, index) => renderMenuLink(link, index))}
+                {socialLinks.map((link, index) => {
+                    const socialClassName = `social-link social-link-${link.field_icon_svg.meta.alt}`;
+                    return (
+                        <a
+                            key={index}
+                            href={link.field_link.uri}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={socialClassName}
+                        >
+                            {link.field_icon_svg.meta.alt}
+                        </a>
+                    );
+                })}
             </div>
-        );
-    }
+        </div>
+    );
 }
 
 export default BurgerMenuWrapper;

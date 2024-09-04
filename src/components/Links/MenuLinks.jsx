@@ -1,5 +1,5 @@
-import React from 'react';
-import {Link, useLocation} from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import Service from "../../services/Service";
 
 /**
@@ -10,26 +10,27 @@ import Service from "../../services/Service";
  */
 function MenuLinksWrapper(props) {
     const location = useLocation();
-    return <MenuLinks {...props} currentPath={location.pathname}/>;
+    return <MenuLinks {...props} currentPath={location.pathname} />;
 }
 
-class MenuLinks extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            menuLinks: [],
-        };
-    }
+/**
+ * Functional component MenuLinks that renders menu links with active state management.
+ *
+ * @param {Object} props - The component props.
+ * @returns {JSX.Element} - The rendered menu links component.
+ */
+function MenuLinks({ currentPath, children, isBurgerOpen }) {
+    const [menuLinks, setMenuLinks] = useState([]);
 
-    /**
-     * Fetches menu links when the component mounts.
-     */
-    async componentDidMount() {
-        const menuLinks = await Service.getMenuLink();
-        this.setState({
-            menuLinks: menuLinks.data,
-        });
-    }
+    useEffect(() => {
+        // Fetch menu links when the component mounts
+        const fetchMenuLinks = async () => {
+            const response = await Service.getMenuLink();
+            setMenuLinks(response.data);
+        };
+
+        fetchMenuLinks();
+    }, []); // Empty dependency array ensures this effect runs only once
 
     /**
      * Determines the path for a link based on its title or URI.
@@ -37,13 +38,13 @@ class MenuLinks extends React.Component {
      * @param {Object} link - The link object.
      * @returns {string} - The determined path.
      */
-    getPath(link) {
+    const getPath = (link) => {
         if (link.title === "Lain nya") {
             return "/lain_nya";
         } else {
             return link.link.uri.replace('internal:', '');
         }
-    }
+    };
 
     /**
      * Renders a menu link as either an internal Link or an external anchor tag.
@@ -52,9 +53,8 @@ class MenuLinks extends React.Component {
      * @param {number} index - The index of the link in the array.
      * @returns {JSX.Element} - The rendered menu link.
      */
-    renderMenuLink(link, index) {
-        const path = this.getPath(link);
-        const {currentPath} = this.props;
+    const renderMenuLink = (link, index) => {
+        const path = getPath(link);
         const isActive = currentPath === path;
         const menuClassName = `menu-link menu-link-${link.title} ${isActive ? 'active' : ''}`;
         const isExternal = link.link.uri.startsWith('http');
@@ -78,26 +78,16 @@ class MenuLinks extends React.Component {
                 </Link>
             );
         }
-    }
+    };
 
-    /**
-     * Renders the component.
-     *
-     * @returns {JSX.Element} - The rendered article component.
-     */
-    render() {
-        const {menuLinks} = this.state;
-        const {children, isBurgerOpen} = this.props;
-
-        return (
-            <div className="header-menu_links">
-                {children}
-                <div className={`menu-links ${isBurgerOpen ? 'open' : ''}`}>
-                    {menuLinks.map((link, index) => this.renderMenuLink(link, index))}
-                </div>
+    return (
+        <div className="header-menu_links">
+            {children}
+            <div className={`menu-links ${isBurgerOpen ? 'open' : ''}`}>
+                {menuLinks.map((link, index) => renderMenuLink(link, index))}
             </div>
-        );
-    }
+        </div>
+    );
 }
 
 export default MenuLinksWrapper;
